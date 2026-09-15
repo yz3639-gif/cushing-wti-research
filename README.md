@@ -4,7 +4,9 @@
 
 How does Cushing inventory relative to its seasonal history relate to the WTI curve, and where does that relationship break down?
 
-[Read the four-page memo](outputs/research_memo.pdf) · [Explore the report](outputs/report.html) · [View the notebook](research_walkthrough.ipynb) · [Three-minute guide](docs/PORTFOLIO_GUIDE.md)
+[Read the four-page memo](https://yz3639-gif.github.io/cushing-wti-research/research_memo.pdf) · [Explore the report](https://yz3639-gif.github.io/cushing-wti-research/) · [View the notebook](research_walkthrough.ipynb) · [Three-minute guide](docs/PORTFOLIO_GUIDE.md)
+
+[Download the complete research package](https://github.com/yz3639-gif/cushing-wti-research/releases/latest) — reports, data snapshot, source code and reproduction instructions.
 
 ## Research answer
 
@@ -59,7 +61,7 @@ PDF, HTML and text read from one saved result set. The HTML bundles its chart li
 
 ## Reproduce
 
-Use **Python 3.12** and the pinned dependencies. From the repository root:
+Use **Python 3.12** and the pinned dependencies. **Node.js 22** runs the report's JavaScript regression checks; GitHub Actions installs both runtimes. From the repository root:
 
 ```bash
 python3.12 -m venv .venv
@@ -68,6 +70,8 @@ make reproduce
 ```
 
 Individual stages: `make validate`, `make build`, `make report` and `make test`. These use the checked-in snapshot; missing sources, checksum mismatches and stale manifests stop the relevant stage.
+
+`make notebook` executes the walkthrough, `make check` verifies matching artifacts, and `make package` produces a ZIP with a SHA-256 manifest. [Automated research checks](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/research.yml) rebuild the results and run the test suite in a fresh Linux environment.
 
 To validate future actual-contract inputs:
 
@@ -87,6 +91,7 @@ data/processed/            Normalized public tables and audits
 data/input/                Interface for locally supplied contract data
 docs/                      Protocol, methods, export specification and reading guide
 outputs/                   Research results, figures, PDF and offline report
+scripts/                   Notebook execution, release checks and packaging
 tests/                     Source, timing, model and accounting checks
 research_walkthrough.ipynb  Reproducible analysis walkthrough
 ```

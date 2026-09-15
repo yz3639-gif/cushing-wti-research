@@ -1,5 +1,8 @@
-data/raw/** -text
-data/processed/** -text
+data/raw/** -text linguist-vendored
+data/processed/** -text linguist-generated
+outputs/** linguist-generated
+docs/index.html linguist-generated
+docs/research_memo.pdf linguist-generated
 *.pdf binary
 *.png binary
 *.ipynb text eol=lf
