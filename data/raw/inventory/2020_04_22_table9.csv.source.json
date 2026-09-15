@@ -1,0 +1,6 @@
+{
+  "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2020/2020_04_22/csv/table9.csv",
+  "sha256": "be4a03c78882d093d62d66bf3ee096060885521291151c3cca38c0bda70474a9",
+  "downloaded_at_utc": "2026-09-15T02:10:22.768992+00:00",
+  "timestamp_method": "initial-download file mtime"
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=W_EPC0_SAX_NUS_MBBL&f=W",
+  "resolved_url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=W_EPC0_SAX_NUS_MBBL&f=W",
+  "sha256": "f4d5928f7afa4d3b8947772f0268d4aec7b7eacacc4560e64860b8c77cdbb597",
+  "downloaded_at_utc": "2026-09-15T02:31:08+00:00",
+  "bytes": 190467,
+  "prior_attempt_errors": []
+}

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this research project when referring to its methods or findings."
+title: "Cushing Inventory Stress & WTI Calendar Spreads"
+authors:
+  - family-names: "Zuo"
+    given-names: "Yuang"
+version: 1.0.0
+date-released: 2026-09-15
+repository-code: "https://github.com/yz3639-gif/cushing-wti-research"
+url: "https://yz3639-gif.github.io/cushing-wti-research/"
+abstract: >-
+  Publication-dated Cushing inventory research, exploratory WTI curve analysis,
+  and an identified-contract forecasting and accounting workflow.
+  Real predictive and trading evidence remains pending verified contract data.
+keywords:
+  - energy
+  - crude oil
+  - Cushing
+  - WTI
+  - reproducible research

@@ -1,0 +1,11 @@
+excluded_year,n,test_status,joint_hinge_p_value,low_slope,normal_slope,high_slope,hac_gap_policy
+2015,429,available,0.8717563653701534,-0.1325980953292062,-0.21892349459333735,-0.12091161728734987,Original release-cycle indices retained; removed-year gap not compressed
+2016,429,available,0.11863677573404263,-0.12130440433513232,-0.28314746533377716,0.22515117832062553,Original release-cycle indices retained; removed-year gap not compressed
+2017,429,available,0.7047486383453401,-0.11916094398513583,-0.23644390423954487,-0.006108296781005551,Original release-cycle indices retained; removed-year gap not compressed
+2018,429,available,1.3262579787036516e-06,-0.6936561795812382,-0.13022964670704607,-0.10041097109376734,Original release-cycle indices retained; removed-year gap not compressed
+2019,429,available,0.7758807144274765,-0.12564810439571333,-0.2268907615984732,-0.04137967806358664,Original release-cycle indices retained; removed-year gap not compressed
+2020,428,available,0.6882343480301114,-0.11255047395707543,-0.2320481457536754,-0.078358201500663,Original release-cycle indices retained; removed-year gap not compressed
+2021,429,available,0.7640756695948123,-0.11718217312218793,-0.264014637316517,-0.07562884898181771,Original release-cycle indices retained; removed-year gap not compressed
+2022,430,available,0.21789960637869782,-0.008001966931901777,-0.2295464138910777,-0.03234172779164779,Original release-cycle indices retained; removed-year gap not compressed
+2023,430,available,0.9657849489934598,-0.13054727502044333,-0.16679160366844836,-0.09113457755455279,Original release-cycle indices retained; removed-year gap not compressed
+2024,467,available,0.7810018613001419,-0.12542375259051833,-0.22238263202057515,-0.044049249497876,Original release-cycle indices retained; removed-year gap not compressed

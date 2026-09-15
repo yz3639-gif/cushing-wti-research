@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "generated_at": "2026-09-15T02:32:44+00:00",
+  "rows": 10302,
+  "start": "1983-03-30",
+  "end": "2024-04-05",
+  "units": "USD per barrel",
+  "cutoff": "2026-09-14",
+  "source_discontinued_after": "2024-04-05",
+  "actual_contract_ids": false,
+  "use": "descriptive_only",
+  "sources": [
+    {
+      "url": "https://www.eia.gov/dnav/pet/hist/RCLC1D.htm",
+      "resolved_url": "https://www.eia.gov/dnav/pet/hist/RCLC1D.htm",
+      "sha256": "e7aac893268ce7f4ed1fd56d100581607b29f023a36d8de88b37ae57887ec4d1",
+      "downloaded_at_utc": "2026-09-15T02:13:34+00:00",
+      "bytes": 476037,
+      "prior_attempt_errors": [],
+      "rank": "F1",
+      "raw_file": "data/raw/public_futures/RCLC1D.html",
+      "rows": 10297
+    },
+    {
+      "url": "https://www.eia.gov/dnav/pet/hist/RCLC2D.htm",
+      "resolved_url": "https://www.eia.gov/dnav/pet/hist/RCLC2D.htm",
+      "sha256": "497033593ccef212b1853bb44cc629d0349741e96c1de731d419e448fd347607",
+      "downloaded_at_utc": "2026-09-15T02:13:43+00:00",
+      "bytes": 455934,
+      "prior_attempt_errors": [],
+      "rank": "F2",
+      "raw_file": "data/raw/public_futures/RCLC2D.html",
+      "rows": 9860
+    },
+    {
+      "url": "https://www.eia.gov/dnav/pet/hist/RCLC3D.htm",
+      "resolved_url": "https://www.eia.gov/dnav/pet/hist/RCLC3D.htm",
+      "sha256": "698120b6212fea9d38188809b48e19588faec5c3341d7c9e2f493258f89a39f9",
+      "downloaded_at_utc": "2026-09-15T02:13:53+00:00",
+      "bytes": 476203,
+      "prior_attempt_errors": [],
+      "rank": "F3",
+      "raw_file": "data/raw/public_futures/RCLC3D.html",
+      "rows": 10301
+    },
+    {
+      "url": "https://www.eia.gov/dnav/pet/hist/RCLC4D.htm",
+      "resolved_url": "https://www.eia.gov/dnav/pet/hist/RCLC4D.htm",
+      "sha256": "86e0af32a1df6f1a2d773aca7eed2a0eb12478fb3e2cabd3387e5dfddbb0e19a",
+      "downloaded_at_utc": "2026-09-15T02:14:02+00:00",
+      "bytes": 455884,
+      "prior_attempt_errors": [],
+      "rank": "F4",
+      "raw_file": "data/raw/public_futures/RCLC4D.html",
+      "rows": 9860
+    }
+  ],
+  "failures": [],
+  "missing_by_column": {
+    "trade_date": 0,
+    "F1": 5,
+    "F2": 442,
+    "F3": 1,
+    "F4": 442
+  },
+  "limitations": [
+    "Public EIA delivery-order ranks, not actual single-contract holdings or a tradable rolled portfolio.",
+    "Futures series stop after April 5, 2024. No extrapolation, interpolation, synthetic identifiers, or executable-fill claims.",
+    "Negative and zero prices are valid; do not apply positive-price or logarithmic-return validation.",
+    "Trade date is an observation label, not provider publication time. Use conservative publication/availability assumptions for descriptive joins."
+  ],
+  "processed_sha256": "759052f7df0366aa42c4f67621fbc2d89874d6afb9b2642f497a241a8799ed15"
+}

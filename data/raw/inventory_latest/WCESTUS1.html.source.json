@@ -1,0 +1,8 @@
+{
+  "url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=WCESTUS1&f=W",
+  "resolved_url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=WCESTUS1&f=W",
+  "sha256": "c0f84e9475779faddf55d2d4c69382217a7b937a8e7565f9a0e5c7c99b155fb3",
+  "downloaded_at_utc": "2026-09-15T02:26:45+00:00",
+  "bytes": 243393,
+  "prior_attempt_errors": []
+}

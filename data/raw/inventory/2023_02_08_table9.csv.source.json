@@ -1,0 +1,10 @@
+{
+  "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2023/2023_02_08/csv/table9.csv",
+  "resolved_url": "https://www.eia.gov/petroleum/supply/weekly/archive/2023/2023_02_08/csv/table9.csv",
+  "sha256": "9a3d62336530a4b2cd6f1e60c1d8d949d0329c0a969028ec734f92501e97e237",
+  "downloaded_at_utc": "2026-09-15T02:22:25+00:00",
+  "bytes": 45744,
+  "prior_attempt_errors": [
+    "TimeoutError: The read operation timed out"
+  ]
+}

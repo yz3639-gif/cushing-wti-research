@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cushing-wti-research"
+version = "1.0.0"
+description = "Publication-aware Cushing inventory and identified-contract WTI spread research"
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy", "pandas", "lxml", "scikit-learn", "scipy", "matplotlib", "plotly", "reportlab", "pypdf", "pdfplumber", "pandas-market-calendars"]
+
+[tool.setuptools.packages.find]
+include = ["cushing_research*"]
+
+[tool.setuptools.package-data]
+cushing_research = ["assets/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

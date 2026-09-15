@@ -1,0 +1,85 @@
+{
+  "files": {
+    "cushing_research/__init__.py": "a613788771da719ad6107a7c246024ffffc15cb5b700c8030a707358cd86404c",
+    "cushing_research/__main__.py": "fc7532c7abc701d78ed162d290752ad5312bc23f3d5a56834e555cccf037e475",
+    "cushing_research/cases.py": "7250bd2f38a5c035981a66c1b1b74a7d5522b72488eaaedb0d4555c71be42478",
+    "cushing_research/data.py": "fb9b0fb24057af235fd6a219de16b6ecbd01ce70b3d5bb321c4c8df2c51ee09d",
+    "cushing_research/features.py": "51bb90870297c0189944f89249771dae888703e8f323d1220c5d37b37211e3c6",
+    "cushing_research/ledger.py": "202cd8753cd28e6c757ddb09ccc68a46db8c5921b8229cab592735c4565fe727",
+    "cushing_research/market.py": "8a48fa48dc2c72d601d186458bcc706f1ce3161492f0a1c0d101b446d22697e8",
+    "cushing_research/mechanism.py": "b8187e11843e4673d4822daa679af578cb51fc50157ff2b81825ad8b61bdc230",
+    "cushing_research/pipeline.py": "a9b68e41f8781bf969eaf31ccdbe9185318cfb355408295e402353487b6f2632",
+    "cushing_research/report.py": "b50a7d3f0442e9f62cd6d96766f632b940fc9e5662827767bd640f38d69597f7",
+    "cushing_research/research.py": "c112b3e9bf29dec3872a8468bd5141e2f07f4a65a81f792309d8357c1a6222c3",
+    "cushing_research/snapshot.py": "7875c9c465ecaaf55fb182fe74327006c00a423cbdf7d46af4c89b0c4e2a070b",
+    "config/mechanism.json": "8c5a6576e3a9f59d386b99f38463aad818ed6c66144e529f32ddfb7ca1e2d961",
+    "config/research.json": "70ad1f6a082956e44ecbe335b3b0a8174cb6f0a8818a6f821c26f646c0051338",
+    "data/processed/inventory.csv": "b201b4cf49f39b82f1f1805c36d8a17e8017c6ec5a4ec8f54988c663b9fdabaf",
+    "data/processed/inventory_audit.json": "92a344a17ce4626c0ceff9b7f1e73286d3f4753b60ae3707b11d7f6ba3a0be9c",
+    "data/processed/inventory_latest_crosscheck.csv": "2c78160b6477d48b281d9527f0da7eadaa41946441a5a808de7914a78fb708e3",
+    "data/processed/public_futures.csv": "759052f7df0366aa42c4f67621fbc2d89874d6afb9b2642f497a241a8799ed15",
+    "data/processed/public_futures_audit.json": "0ef6d545c1e4b5b9fc7c892cfdd8e6ea71fbc366b8766d3cf3b4e2b236945ba7"
+  },
+  "config": {
+    "title": "Cushing Inventory Stress & WTI Calendar Spreads",
+    "author": "Yuang Zuo",
+    "data_cutoff": "2026-09-14",
+    "warmup_start": "2011-08-03",
+    "train_start": "2015-01-01",
+    "validation_years": [
+      2019,
+      2020,
+      2021
+    ],
+    "test_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "recent_years": [
+      2026
+    ],
+    "alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "ridge_objective": "sum_squared_residuals_plus_alpha_l2",
+    "refit_gap_sessions": 5,
+    "max_holding_sessions": 10,
+    "expiry_buffer_sessions": 5,
+    "seasonal_years": 3,
+    "seasonal_day_window": 28,
+    "seasonal_min_observations": 20,
+    "bootstrap_block": 8,
+    "bootstrap_reps": 2000,
+    "bootstrap_seed": 4912816,
+    "multiplier": 1000,
+    "tick_size": 0.01,
+    "fee_per_contract_side": 2.5,
+    "cost_ticks": [
+      1,
+      2,
+      4
+    ],
+    "signal_threshold": 0.075,
+    "minimum_economic_intervals": 30,
+    "market_price_lag_sessions": 1,
+    "national_control_enabled": false,
+    "national_definition_break_week": "2016-10-07"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "plotly": "7.0.0",
+    "reportlab": "4.4.9"
+  },
+  "python": "3.12.14",
+  "run_id": "902e770aeb2ecdab",
+  "created_at": "2026-09-15T16:27:00.978880+00:00"
+}
