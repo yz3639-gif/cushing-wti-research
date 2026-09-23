@@ -1,0 +1,1682 @@
+{
+  "snapshots": [
+    {
+      "contracts": [
+        {
+          "contract_id": "FIXTURE_CLM27",
+          "product": "CL",
+          "kind": "future",
+          "underlyings": [],
+          "expiry": "2027-05-20T18:30:00+00:00",
+          "strike": null,
+          "right": null,
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_CLN27",
+          "product": "CL",
+          "kind": "future",
+          "underlyings": [],
+          "expiry": "2027-06-20T18:30:00+00:00",
+          "strike": null,
+          "right": null,
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_0.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 0.5,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_0.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 0.5,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.5,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.5,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        }
+      ],
+      "quotes": [
+        {
+          "contract_id": "FIXTURE_CLM27",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 78.99,
+          "ask": 79.01,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_CLN27",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 77.99,
+          "ask": 78.01,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_76",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 9.217264742066908,
+          "ask": 9.287264742066908,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_76",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 6.293278299983313,
+          "ask": 6.363278299983313,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_78",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 8.264373841083078,
+          "ask": 8.334373841083078,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_78",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 7.2897116937218795,
+          "ask": 7.35971169372188,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_80",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 7.388985632412292,
+          "ask": 7.4589856324122925,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_80",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 8.36364777977349,
+          "ask": 8.43364777977349,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_76",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 8.632079877032108,
+          "ask": 8.702079877032109,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_76",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 6.682755582309722,
+          "ask": 6.752755582309723,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_78",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 7.717764194620829,
+          "ask": 7.787764194620829,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_78",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 7.717764194620829,
+          "ask": 7.787764194620829,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_80",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 6.880557398524871,
+          "ask": 6.950557398524872,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_80",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 8.829881693247268,
+          "ask": 8.899881693247268,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_0.5",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 1.3160598458141435,
+          "ask": 1.3860598458141433,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_0.5",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 0.8287287721335443,
+          "ask": 0.8987287721335444,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 1.0551032463908558,
+          "ask": 1.1251032463908557,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 1.0551032463908558,
+          "ask": 1.1251032463908557,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1.5",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 0.8287287721335443,
+          "ask": 0.8987287721335444,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1.5",
+          "as_of": "2026-09-22T14:00:00+00:00",
+          "bid": 1.3160598458141435,
+          "ask": 1.3860598458141433,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        }
+      ],
+      "as_of": "2026-09-22T14:00:00+00:00",
+      "mode": "engineering_fixture",
+      "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+      "sequence": 0,
+      "rate": 0.04,
+      "feed_alive": true,
+      "received_at": "2026-09-22T14:00:00.020000+00:00"
+    },
+    {
+      "contracts": [
+        {
+          "contract_id": "FIXTURE_CLM27",
+          "product": "CL",
+          "kind": "future",
+          "underlyings": [],
+          "expiry": "2027-05-20T18:30:00+00:00",
+          "strike": null,
+          "right": null,
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_CLN27",
+          "product": "CL",
+          "kind": "future",
+          "underlyings": [],
+          "expiry": "2027-06-20T18:30:00+00:00",
+          "strike": null,
+          "right": null,
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_0.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 0.5,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_0.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 0.5,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.5,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.5,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        }
+      ],
+      "quotes": [
+        {
+          "contract_id": "FIXTURE_CLM27",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 79.58999999999999,
+          "ask": 79.61,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_CLN27",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 78.19,
+          "ask": 78.21000000000001,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_76",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 9.624549008598398,
+          "ask": 9.694549008598399,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_76",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 6.11576525584553,
+          "ask": 6.1857652558455305,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_78",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 8.649963836717104,
+          "ask": 8.719963836717104,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_78",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 7.0905043910491665,
+          "ask": 7.160504391049167,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_80",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 7.752539155159282,
+          "ask": 7.822539155159283,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_80",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 8.142404016576274,
+          "ask": 8.212404016576274,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_76",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 8.794949812799814,
+          "ask": 8.864949812799814,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_76",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 6.650693075006385,
+          "ask": 6.720693075006385,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_78",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 7.873801162369156,
+          "ask": 7.943801162369156,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_78",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 7.67886873166066,
+          "ask": 7.74886873166066,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_80",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 7.029369121820134,
+          "ask": 7.099369121820135,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_80",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 8.78376099819657,
+          "ask": 8.85376099819657,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_0.5",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 1.5790190102586243,
+          "ask": 1.6490190102586242,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_0.5",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 0.701823072070414,
+          "ask": 0.771823072070414,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 1.2919514762437598,
+          "ask": 1.3619514762437597,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 0.902086614826782,
+          "ask": 0.972086614826782,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1.5",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 1.0381899584958068,
+          "ask": 1.1081899584958066,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1.5",
+          "as_of": "2026-09-22T14:00:05+00:00",
+          "bid": 1.1356561738500617,
+          "ask": 1.2056561738500615,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        }
+      ],
+      "as_of": "2026-09-22T14:00:05+00:00",
+      "mode": "engineering_fixture",
+      "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+      "sequence": 1,
+      "rate": 0.04,
+      "feed_alive": true,
+      "received_at": "2026-09-22T14:00:05.020000+00:00"
+    },
+    {
+      "contracts": [
+        {
+          "contract_id": "FIXTURE_CLM27",
+          "product": "CL",
+          "kind": "future",
+          "underlyings": [],
+          "expiry": "2027-05-20T18:30:00+00:00",
+          "strike": null,
+          "right": null,
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_CLN27",
+          "product": "CL",
+          "kind": "future",
+          "underlyings": [],
+          "expiry": "2027-06-20T18:30:00+00:00",
+          "strike": null,
+          "right": null,
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLM27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_76",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 76.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_78",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 78.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_80",
+          "product": "LCE",
+          "kind": "vanilla",
+          "underlyings": [
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 80.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_0.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 0.5,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_0.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 0.5,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.0,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.0,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.5,
+          "right": "call",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1.5",
+          "product": "B7A",
+          "kind": "cso",
+          "underlyings": [
+            "FIXTURE_CLM27",
+            "FIXTURE_CLN27"
+          ],
+          "expiry": "2027-05-14T18:30:00+00:00",
+          "strike": 1.5,
+          "right": "put",
+          "multiplier": 1000.0,
+          "tick_size": 0.01,
+          "currency": "USD",
+          "exercise": "european",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+        }
+      ],
+      "quotes": [
+        {
+          "contract_id": "FIXTURE_CLM27",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 78.89,
+          "ask": 78.91000000000001,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_CLN27",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 78.39,
+          "ask": 78.41000000000001,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_76",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 9.252576200641679,
+          "ask": 9.322576200641679,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_76",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 6.426055937442843,
+          "ask": 6.4960559374428435,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_78",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 8.30568269772531,
+          "ask": 8.37568269772531,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_78",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 7.428486753973946,
+          "ask": 7.498486753973946,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_80",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 7.435292474362398,
+          "ask": 7.505292474362398,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_80",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 8.507420850058498,
+          "ask": 8.577420850058498,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_76",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 8.95858498737165,
+          "ask": 9.02858498737165,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_76",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 6.619395804034687,
+          "ask": 6.689395804034687,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_78",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 8.030710808763887,
+          "ask": 8.100710808763887,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_78",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 7.640845944874396,
+          "ask": 7.7108459448743965,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_80",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 7.179158319116072,
+          "ask": 7.249158319116073,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_put_80",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 8.738617774674031,
+          "ask": 8.808617774674032,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_0.5",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 1.1173945903174185,
+          "ask": 1.1873945903174183,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_0.5",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 1.1173945903174185,
+          "ask": 1.1873945903174183,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 0.8900900101611682,
+          "ask": 0.9600900101611682,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 1.3774210900230341,
+          "ask": 1.447421090023034,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_call_1.5",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 0.6950471517516962,
+          "ask": 0.7650471517516962,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        },
+        {
+          "contract_id": "FIXTURE_B7A_put_1.5",
+          "as_of": "2026-09-22T14:00:10+00:00",
+          "bid": 1.6697093114754282,
+          "ask": 1.739709311475428,
+          "bid_size": 20.0,
+          "ask_size": 20.0,
+          "kind": "bbo",
+          "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+          "flags": []
+        }
+      ],
+      "as_of": "2026-09-22T14:00:10+00:00",
+      "mode": "engineering_fixture",
+      "source": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence",
+      "sequence": 2,
+      "rate": 0.04,
+      "feed_alive": true,
+      "received_at": "2026-09-22T14:00:10.020000+00:00"
+    }
+  ],
+  "portfolio": [
+    {
+      "contract_id": "FIXTURE_B7A_call_1",
+      "quantity": -10
+    }
+  ],
+  "settings": {
+    "target_id": "FIXTURE_B7A_call_1",
+    "fee_per_contract": 1.25,
+    "fee_confirmed": true,
+    "scenario_count": 100
+  },
+  "fixture_notice": "Synthetic engineering fixture; invented prices and expiry metadata; no market-data evidence"
+}

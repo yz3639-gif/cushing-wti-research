@@ -1,4 +1,6 @@
 .venv/
+.venv-options/
+options_lab_runs/
 __pycache__/
 .pytest_cache/
 *.py[cod]

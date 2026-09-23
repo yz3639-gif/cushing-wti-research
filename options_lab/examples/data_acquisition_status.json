@@ -1,0 +1,74 @@
+{
+  "recorded_at_utc": "2026-09-23T17:25:06.061706+00:00",
+  "status": "pending_real_data",
+  "observed_snapshot_count": 0,
+  "raw_files_saved": 0,
+  "api_credentials_used": false,
+  "purchases_or_agreements": false,
+  "attempts": [
+    {
+      "url": "https://www.cmegroup.com/content/dam/cmegroup/files/download/STLNYMEX_20230403",
+      "source": "Official CME DataMine sample link",
+      "method": "HTTPS GET",
+      "response": "HTTP 403 Forbidden",
+      "timeout_seconds": 15,
+      "max_bytes": 20000000,
+      "downloaded_bytes": 0
+    },
+    {
+      "url": "https://www.cmegroup.com/market-data/datamine-historical-data/files/xnym-eodf-cl-fut-20200312.csv",
+      "source": "Official CME DataMine sample link",
+      "method": "HTTPS GET",
+      "response": "HTTP 403 Forbidden",
+      "timeout_seconds": 15,
+      "max_bytes": 20000000,
+      "downloaded_bytes": 0
+    },
+    {
+      "url": "https://www.cmegroup.com/market-data/datamine-historical-data/files/xnym-eodp-lo-opt-20200312.csv",
+      "source": "Official CME DataMine sample link",
+      "method": "HTTPS GET",
+      "response": "HTTP 403 Forbidden",
+      "timeout_seconds": 15,
+      "max_bytes": 20000000,
+      "downloaded_bytes": 0
+    }
+  ],
+  "browser_attempt_reported": "Official CME DataMine download blocked: ERR_BLOCKED_BY_CLIENT",
+  "interpretation": [
+    "CME official sample links exist; their content was not obtained or validated.",
+    "2020 CL futures sample covers futures only.",
+    "2020 LO options sample is American WTI and cannot substitute for LCE European options.",
+    "No CL/LCE/B7A real snapshot or calibrated real surface exists yet.",
+    "Engineering fixture is synthetic and does not satisfy the data acceptance gate."
+  ],
+  "next_probe": {
+    "provider": "Databento, optional user-authorized historical account/trial access",
+    "default_fetch_enabled": false,
+    "before_fetch": [
+      "Confirm account credit and CME entitlement; do not assume free credit is available.",
+      "Resolve CL, LCE/LC and B7A/7A definitions and actual raw symbols. B7A synthetic CA2 underlying must resolve to two exact CL futures.",
+      "Use metadata.get_cost and an explicit maximum estimated cost; require fresh authorization if estimate exceeds it.",
+      "Select one common historical market date; retrieve bounded definitions and sampled quotes before any bulk request."
+    ],
+    "hard_request_bounds": {
+      "max_days": 1,
+      "max_symbols": 20,
+      "max_records": 100000,
+      "transport_timeout_seconds": 60
+    },
+    "acceptance": [
+      "Observed source data for both exact CL legs plus European LCE and financial B7A, with same-date timestamps.",
+      "Definitions include identity, option right/strike, exact expiry time, multiplier, tick, exercise/settlement convention and exact underlying legs.",
+      "Preserve quote/event/receive times, BBO size, settlement-vs-BBO type and vendor quality flags.",
+      "Check quote coverage, two-sidedness, age, schema scaling, missing/duplicate observations, truncation and definition resolution before normalization.",
+      "Obtain more than one quoted strike per needed slice, test IV validity and show rejected points; do not substitute assumed vol/correlation for missing observed inputs.",
+      "Save raw data, request query, cost estimate and file hash privately, with no redistribution unless licensed."
+    ],
+    "not_yet_complete": [
+      "real-data calibration",
+      "120-session historical evaluation",
+      "live stream demonstration"
+    ]
+  }
+}

@@ -8,6 +8,12 @@ How does Cushing inventory relative to its seasonal history relate to the WTI cu
 
 [Download the complete research package](https://github.com/yz3639-gif/cushing-wti-research/releases/latest) — reports, data snapshot, source code and reproduction instructions.
 
+## Companion project: WTI Options Desk
+
+The new [WTI Options Desk](options_lab/README.md) is an independent local Python/Streamlit tool for editable CSO and vanilla volatility, indicative quotes, integer proxy hedges and residual stress risk. It includes portable sessions, historical evaluation of the desk policy and regression tests. [Validation evidence and limits](options_lab/VALIDATION.md) · [Optional CI template](options_lab/ci/options-desk.yml.example)
+
+The included options data is explicitly synthetic. Real options-data acceptance, empirical hedge improvement and live-feed acceptance remain pending. This extension does not change the inventory research results below and is not included in the original v1.0.0 research ZIP. Run the interactive desk locally; the existing GitHub Pages site remains the inventory research report.
+
 ## Research answer
 
 **Lower seasonal inventories coincide with stronger nearby WTI spreads in the pooled history. Evidence for additional nonlinear shape is weak after controlling for year and season.** Inventory provides context for investigating physical conditions; these results do not establish a profitable trading rule.
