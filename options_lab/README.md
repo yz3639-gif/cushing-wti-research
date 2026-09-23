@@ -6,9 +6,11 @@ The presentation is branded **Built by Antony Zuo**. The opening **Desk overview
 
 ## Start locally
 
-For a shareable browser URL, see [public deployment instructions](DEPLOY.md).
-The cloud entrypoint is `options_lab/cloud_app.py`; deployment remains pending
-until a hosted URL and access have been verified.
+**[Open the public interactive walkthrough](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)**
+for 45 synthetic cases precomputed by this engine. It requires no installation or
+sign-in. See [hosting, validation and reproduction details](DEPLOY.md).
+The full online Python application remains a separate, undeployed option;
+its cloud entrypoint is `options_lab/cloud_app.py`.
 
 From the repository root:
 

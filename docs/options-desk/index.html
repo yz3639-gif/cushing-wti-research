@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1118">
+  <meta name="description" content="An interactive WTI options walkthrough by Antony Zuo. Explore precomputed volatility, indicative quotes, proxy hedges and residual scenario risk using synthetic inputs.">
+  <title>WTI Options Desk | Antony Zuo</title>
+  <link rel="icon" href="az-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><div class="brand"><span class="monogram">AZ</span><div><b>ANTONY ZUO</b><small>ENERGY DERIVATIVES</small></div></div><div class="header-right"><a href="https://github.com/yz3639-gif/cushing-wti-research/tree/main/options_lab" target="_blank" rel="noopener noreferrer">View source ↗</a><span>Built by <strong>Antony Zuo</strong></span></div></header>
+  <main>
+    <div class="title-row"><div><p class="eyebrow">WTI / VOLATILITY &amp; PROXY HEDGING</p><h1>The options desk.</h1></div><span class="pill">INTERACTIVE WALKTHROUGH</span></div>
+    <div class="notice"><strong>Synthetic inputs.</strong> Choose a preset and inspect results calculated by the Python desk engine. No live data, online solver, or order routing.</div>
+    <div id="load-status" class="loading" role="status">Loading the desk…</div>
+    <section id="workspace" hidden>
+      <section class="controls" aria-label="Scenario controls">
+        <div class="control-market"><label for="snapshot">01 / Market snapshot</label><div class="select-row"><select id="snapshot"></select><button id="next" class="icon-button" aria-label="Next snapshot">Next →</button></div><small id="snapshot-time"></small></div>
+        <div><label for="cso">02 / CSO normal volatility</label><div class="range-value"><output id="cso-value" for="cso">0.0</output><span>$/bbl/√year shift</span></div><input id="cso" type="range" min="-1" max="1" step="0.5" value="0"><div class="range-labels"><span>−1.0</span><span>Market</span><span>+1.0</span></div></div>
+        <div><label for="vanilla">03 / Vanilla volatility</label><div class="range-value"><output id="vanilla-value" for="vanilla">0</output><span>percentage-point shift</span></div><input id="vanilla" type="range" min="-5" max="5" step="5" value="0"><div class="range-labels"><span>−5 pp</span><span>Market</span><span>+5 pp</span></div></div>
+      </section>
+      <div class="action-row"><div id="change-state" role="status" aria-live="polite">Active inputs follow the selected market snapshot.</div><div class="action-buttons"><button id="reset" class="secondary">Reset to market</button><button id="apply" disabled>Apply draft →</button></div></div>
+      <section id="preview" class="preview" hidden aria-label="Draft comparison"><div class="eyebrow">DRAFT PREVIEW / SAME MARKET &amp; POSITION</div><div id="preview-values" class="preview-values"></div><p>Preview does not change the active quote, hedge or risk below.</p></section>
+      <div id="calculation-warning" class="notice error" hidden role="alert"></div>
+      <section id="metrics" class="metrics" aria-label="Active calculation"></section>
+      <div class="desk-grid">
+        <section class="panel"><div class="panel-heading"><div><span class="index">01</span><h2>Volatility workspace</h2></div><span class="tag">CSO · NORMAL</span></div><p class="muted" id="slice-label"></p><div id="vol-chart" class="vol-chart"></div><div class="legend"><span><i class="market"></i>Market</span><span><i class="active"></i>Active</span><span><i class="draft"></i>Draft</span></div><p class="footnote">Supplied nodes only. Lines connect the same expiry and underlying pair.</p></section>
+        <section class="panel"><div class="panel-heading"><div><span class="index">02</span><h2>Indicative quote</h2></div><span class="tag">USD / BBL</span></div><p class="muted" id="quote-label"></p><div id="quote-board" class="quote-board"></div><div class="position-strip"><span>Position <strong id="position"></strong></span><span>Direct CSO hedge <strong>Blocked</strong></span></div><details><summary>Why this quote?</summary><p id="quote-explanation"></p><p id="quote-policy" class="footnote"></p></details><p class="footnote">Model-generated quote. Zero size means suppressed; no fill is implied.</p></section>
+        <section class="panel"><div class="panel-heading"><div><span class="index">03</span><h2>What remains at risk</h2></div><span class="tag">NET OF COSTS</span></div><p class="muted">Worst loss across the same 100 configured scenarios · USD</p><div id="risk-chart" class="risk-chart"></div><div class="insight"><p class="eyebrow">THE RISK A PROXY CAN MISS</p><h3>CSO volatility rises.<br>Vanilla volatility stays flat.</h3><div class="basis-result"><span>Proxy P&amp;L under +1.0 normal vol</span><strong id="basis-loss"></strong></div><p class="footnote" id="basis-horizon"></p></div><p class="footnote">Hypothetical stress scenarios have no assigned probabilities and do not bound future loss.</p></section>
+        <section class="panel"><div class="panel-heading"><div><span class="index">04</span><h2>The hedge ticket</h2></div><span class="tag">WHOLE CONTRACTS</span></div><p class="muted" id="solver"></p><div id="hedge-trades" class="hedge-trades"></div><div class="ticket-total"><span>Estimated trading cost</span><strong id="hedge-cost"></strong></div><p class="footnote">Futures and vanilla options. Solver status and costs belong to the same active result.</p></section>
+      </div>
+      <details class="audit"><summary>Inspect the calculation &amp; assumptions</summary><div id="audit-meta"></div><div class="audit-grid"><div><h3>What you are seeing</h3><p>45 precomputed cases: three synthetic snapshots, five CSO volatility shifts, and three vanilla volatility shifts. Each case is evaluated independently by the original Python engine.</p><p>Selecting a new snapshot resets volatility to its market calibration. The sliders choose exact stored cases; they do not interpolate hedge quantities or run an online optimizer.</p></div><div><h3>What this does not establish</h3><p>No observed market data, historical hedge performance, executable quotes, or real-time connection is demonstrated. Limited-search solutions are feasible proposals, not proved optima.</p><p>The complete Python application supports arbitrary validated inputs and is available in the source repository.</p></div></div><button id="download" class="secondary">Download active result JSON</button><a href="verification.json" target="_blank" rel="noopener noreferrer">Case validation record ↗</a></details>
+    </section>
+  </main>
+  <footer><span>AZ / WTI OPTIONS DESK</span><span>Built by Antony Zuo · Engineering demonstration</span></footer>
+</body>
+</html>

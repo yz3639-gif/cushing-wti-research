@@ -1,53 +1,56 @@
-# Share the interactive desk
+# Share the WTI Options Desk
 
-## Current state
+**[Open the public demo](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)**
 
-Deployment files are prepared. A public application URL has **not** been created
-or verified. GitHub contains the source code; the existing GitHub Pages site
-continues to serve the original inventory research report.
+The public walkthrough is a static HTML/CSS/JavaScript application hosted on
+GitHub Pages, under `docs/options-desk/`. It requires no login, installation,
+market-data account or connection to the developer's computer.
+The page title and author credit are **WTI Options Desk | Antony Zuo** and
+**Built by Antony Zuo**.
 
-## Free public demo: Streamlit Community Cloud
+## What visitors can do
 
-Sign in at <https://share.streamlit.io/> and create an app from the public GitHub
-repository using these exact settings:
+- Select one of three synthetic market snapshots.
+- Shift CSO normal volatility by −1, −0.5, 0, +0.5 or +1 $/bbl/√year.
+- Shift vanilla lognormal volatility by −5, 0 or +5 percentage points.
+- Preview the selected case without changing active results, then Apply it.
+- Inspect indicative quotes, whole-contract hedge tickets, costs and residual
+  scenario risk from one consistent engine result bundle.
+- Download the active case and inspect the numerical validation record.
 
-| Field | Value |
-|---|---|
-| Repository | `yz3639-gif/cushing-wti-research` |
-| Branch | `main` |
-| Main file | `options_lab/cloud_app.py` |
-| Python, under Advanced settings | `3.12` |
-| Suggested app subdomain, subject to availability | `antony-zuo-wti-options` |
-| Secrets | None |
+These are exactly 45 stored Python-engine evaluations. The browser does not
+interpolate results or run an online optimizer. Selecting another snapshot resets
+both active and draft volatility to that snapshot's calibrated market case.
+All inputs are explicitly synthetic; no live-feed or historical-performance
+acceptance is implied. The proxy solutions are feasible bounded-search
+incumbents, not proved optima. Raw solver diagnostics remain available.
 
-The entrypoint-adjacent `options_lab/requirements.txt` supplies the five direct
-runtime dependencies. The root `.streamlit/config.toml` supplies the theme.
-The public demo requires no data-provider account or paid feed.
+## Source and numerical evidence
 
-The public entrypoint retains volatility editing, Preview / Apply, indicative
-quotes, integer hedges, stress analysis and replay. It accepts only the bundled,
-explicitly synthetic demonstration. Snapshot, saved-session and volatility-file
-uploads are not exposed, and it does not initiate provider connections. The
-local `options_lab/app.py` continues to support authorized local files.
+The initial data asset was produced by engine `0.2.0` at commit
+`e45da888213389d1f2b9500d3905b78ee2cfd1c3`. The JSON keeps that provenance.
 
-The page title and author credit remain **WTI Options Desk | Antony Zuo** and
-**Built by Antony Zuo**. The hosting service may expose its own platform controls
-or branding independently of the application.
+`docs/options-desk/verification.json` records 45 cases, 54,125 checks, no failed
+checks, and three repeated evaluations that matched. The maximum recorded
+reconciliation/repricing error is approximately $1.46e−11.
 
-## Before sharing the URL with John
+Recreate the asset using the isolated options environment:
 
-1. Wait for the cloud build to succeed and record the actual assigned URL.
-2. Set the app's viewing access to public. Open that URL in a separate unsigned-in
-   browser and confirm it does not request the developer's account.
-3. Load the synthetic demo. Shift CSO volatility, Preview, Apply, and inspect the
-   updated quote, hedge ticket and residual risk. Confirm the synthetic label
-   remains visible.
-4. Confirm the page remains usable when the developer's local server is stopped.
-5. Share the verified application URL, with the GitHub repository as a source link.
+```bash
+.venv-options/bin/python -m options_lab.generate_public_demo
+```
 
-Local tests do not establish that a cloud deployment or anonymous-access check
-has completed. Do not publish an intended subdomain as a working application URL.
+The default output is the ignored `options_lab_runs/public_demo_data/` folder.
+Review its validation record before copying `demo-data.json` and
+`verification.json` into `docs/options-desk/`. Solver versions and bounded-search
+termination can affect incumbents; preserve source and diagnostic metadata.
 
-Official references: [Deployment](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy),
-[dependency discovery](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/app-dependencies),
-[app sharing](https://docs.streamlit.io/deploy/streamlit-community-cloud/share-your-app).
+GitHub Pages publishes `main:/docs`. The inventory report at the website root and
+its research outputs are independent. Publishing the demo does not replace them.
+
+## Full online Python application
+
+The complete Streamlit application remains available locally and supports
+arbitrary validated inputs. Its prepared public-cloud entrypoint is
+`options_lab/cloud_app.py`; that separate hosting route is not deployed.
+The static public walkthrough above is the link to share.

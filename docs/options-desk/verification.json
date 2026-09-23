@@ -1,0 +1,217 @@
+{
+  "generated_at": "2026-09-23T20:44:53.673141+00:00",
+  "source_commit": "e45da888213389d1f2b9500d3905b78ee2cfd1c3",
+  "engine_version": "0.2.0",
+  "data_file": "demo-data.json",
+  "data_sha256": "37b218d073690f565f5b8a6f858d2f726ad57efd847f4b2a36376a9d215a5b99",
+  "fixture_file": "options_lab/examples/engineering_replay.json",
+  "fixture_sha256": "2da8d0b687e6945d61a0099fe0424fba91b636b196c2ec41527c9dc11ade94f5",
+  "source_tracked_changes": "",
+  "case_count": 45,
+  "snapshot_count": 3,
+  "check_count": 54125,
+  "failure_count": 0,
+  "failures": [],
+  "numeric_tolerance": 1e-08,
+  "max_reconciliation_errors": {
+    "engine_reconciliation": 1.4551915228366852e-11,
+    "independent_repricing": 1.4551915228366852e-11,
+    "contribution_sum": 0.0,
+    "gross_minus_cost_net": 1.4551915228366852e-11,
+    "trade_cost": 1.1368683772161603e-13,
+    "summary": 1.8189894035458565e-12,
+    "price": 0.0
+  },
+  "status_counts": {
+    "analysis_only": 45
+  },
+  "hedge_status_counts": {
+    "delta": {
+      "optimal": 45
+    },
+    "proxy": {
+      "feasible_limit": 45
+    }
+  },
+  "time_guard_nondeterminism_flag": false,
+  "saved_case_time_guards": [],
+  "all_observed_time_guards": [],
+  "preview_apply_differences": [],
+  "representative_repeat_evaluations": [
+    {
+      "case": [
+        0,
+        0,
+        0
+      ],
+      "numeric_and_structural_match": true,
+      "time_guard_triggered": false,
+      "differences": []
+    },
+    {
+      "case": [
+        1,
+        -1,
+        -5
+      ],
+      "numeric_and_structural_match": true,
+      "time_guard_triggered": false,
+      "differences": []
+    },
+    {
+      "case": [
+        2,
+        1,
+        5
+      ],
+      "numeric_and_structural_match": true,
+      "time_guard_triggered": false,
+      "differences": []
+    }
+  ],
+  "baseline_reference": {
+    "snapshot_index": 0,
+    "cso_shift": 0,
+    "vanilla_shift_pp": 0,
+    "bundle_id": "bundle-4409fb4f564ec2ec9b19",
+    "quote": {
+      "contract_id": "FIXTURE_B7A_call_1",
+      "model_price": 1.0901032463908558,
+      "bid": 1.25,
+      "ask": 1.35,
+      "bid_size": 1,
+      "ask_size": 0,
+      "bid_marginal_risk": -2281.1528576072997,
+      "ask_marginal_risk": 2281.1528576072997,
+      "status": "indicative",
+      "reasons": [],
+      "label": "Indicative model quote; no orders or fill prediction",
+      "cost_source": "observed BBO half-spread + configured fee",
+      "bid_marginal_penalty": -1977.390176712581,
+      "ask_marginal_penalty": 2185.5365111033784,
+      "initial_position_breach": false,
+      "minimum_compliant_bid_clip": 1,
+      "minimum_compliant_ask_clip": 0,
+      "position_policy": "A complete indicated clip must leave the final position within its limit; partial repair is not labelled compliant. Existing stress-risk excess permits only stress-reducing clips, still subject to final position compliance. No partial-fill or execution guarantee.",
+      "quote_rule": "penalty = worst_absolute_stress_pnl^2 / (2 * risk_scale_dollars); exact one-lot dealer inventory change",
+      "inventory": -10,
+      "current_stress_risk": 22811.528576072997
+    },
+    "risk_summary": {
+      "unhedged": {
+        "worst_abs_pnl": 22811.528576072997,
+        "worst_loss": 22811.528576072997,
+        "scenario_rms": 10937.678167199929,
+        "scenario_mean": -3330.2964628572104,
+        "scenario_count": 100
+      },
+      "delta": {
+        "worst_abs_pnl": 8680.959610945176,
+        "worst_loss": 8680.959610945176,
+        "scenario_rms": 4651.405352748715,
+        "scenario_mean": -3592.796462857261,
+        "scenario_count": 100
+      },
+      "proxy": {
+        "worst_abs_pnl": 7716.534776594786,
+        "worst_loss": 7716.534776594786,
+        "scenario_rms": 4240.3506344488915,
+        "scenario_mean": -3346.4016623487055,
+        "scenario_count": 100
+      }
+    },
+    "hedges": {
+      "delta": {
+        "status": "optimal",
+        "termination_reason": "optimal",
+        "cost": 112.50000000005116,
+        "trades": [
+          {
+            "contract_id": "FIXTURE_CLM27",
+            "quantity": 5,
+            "direction": "buy",
+            "lots": 5,
+            "cost_per_lot": 11.250000000005116,
+            "total_cost": 56.25000000002558,
+            "cost_source": "observed BBO half-spread + configured fee"
+          },
+          {
+            "contract_id": "FIXTURE_CLN27",
+            "quantity": -5,
+            "direction": "sell",
+            "lots": 5,
+            "cost_per_lot": 11.250000000005116,
+            "total_cost": 56.25000000002558,
+            "cost_source": "observed BBO half-spread + configured fee"
+          }
+        ],
+        "mip_gap": 0.0
+      },
+      "proxy": {
+        "status": "feasible_limit",
+        "termination_reason": "solver_error",
+        "cost": 823.7500000000641,
+        "trades": [
+          {
+            "contract_id": "FIXTURE_CLM27",
+            "quantity": 7,
+            "direction": "buy",
+            "lots": 7,
+            "cost_per_lot": 11.250000000005116,
+            "total_cost": 78.75000000003581,
+            "cost_source": "observed BBO half-spread + configured fee"
+          },
+          {
+            "contract_id": "FIXTURE_CLN27",
+            "quantity": -5,
+            "direction": "sell",
+            "lots": 5,
+            "cost_per_lot": 11.250000000005116,
+            "total_cost": 56.25000000002558,
+            "cost_source": "observed BBO half-spread + configured fee"
+          },
+          {
+            "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_call_76",
+            "quantity": -2,
+            "direction": "sell",
+            "lots": 2,
+            "cost_per_lot": 36.25000000000014,
+            "total_cost": 72.50000000000028,
+            "cost_source": "observed BBO half-spread + configured fee"
+          },
+          {
+            "contract_id": "FIXTURE_LCE_FIXTURE_CLM27_put_80",
+            "quantity": 2,
+            "direction": "buy",
+            "lots": 2,
+            "cost_per_lot": 36.25000000000014,
+            "total_cost": 72.50000000000028,
+            "cost_source": "observed BBO half-spread + configured fee"
+          },
+          {
+            "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_76",
+            "quantity": -7,
+            "direction": "sell",
+            "lots": 7,
+            "cost_per_lot": 36.25000000000014,
+            "total_cost": 253.750000000001,
+            "cost_source": "observed BBO half-spread + configured fee"
+          },
+          {
+            "contract_id": "FIXTURE_LCE_FIXTURE_CLN27_call_78",
+            "quantity": 8,
+            "direction": "buy",
+            "lots": 8,
+            "cost_per_lot": 36.25000000000014,
+            "total_cost": 290.00000000000114,
+            "cost_source": "observed BBO half-spread + configured fee"
+          }
+        ],
+        "mip_gap": 0.20565360575129008
+      }
+    }
+  },
+  "elapsed_seconds": 21.897047542006476,
+  "passed": true,
+  "scope": "Fixture asset validation and three repeated engine evaluations only. No real-market, live, or historical performance acceptance claim."
+}
