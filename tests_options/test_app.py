@@ -171,3 +171,22 @@ def test_overview_resolves_engine_default_cso_when_target_id_is_empty():
     cards = [metric for metric in app.metric if metric.label == "CSO normal vol · $/bbl/√yr"]
     assert cards[0].value == f"{expected['vol']:,.3f}"
     assert not any("No quote available" in notice.value for notice in app.info)
+
+
+def test_public_demo_keeps_volatility_workflow_without_any_file_uploads():
+    app = AppTest.from_file(str(APP.with_name("cloud_app.py"))).run(timeout=30)
+    assert not app.exception
+    assert not app.get("file_uploader")
+    app.button(key="explore_demo").click().run(timeout=30)
+    assert not app.exception
+    assert app.session_state["fixture_selected"] is True
+    assert not app.get("file_uploader")
+    desk = app.session_state["desk"]
+    original = desk.active_vol.version_id
+    stage_shift(app)
+    app.button(key="preview_change").click().run(timeout=30)
+    app.button(key="apply_preview").click().run(timeout=30)
+    assert not app.exception
+    assert desk.mode == "manual"
+    assert desk.active_vol.version_id != original
+    assert not app.get("file_uploader")

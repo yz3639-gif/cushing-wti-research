@@ -1,0 +1,7 @@
+# Minimal public-demo runtime. The broader local validation environment is
+# recorded separately in requirements.lock.txt.
+streamlit==1.64.0
+pandas==3.0.6
+plotly==7.1.0
+numpy==2.5.3
+scipy==1.18.1

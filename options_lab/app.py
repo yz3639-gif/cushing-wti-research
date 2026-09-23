@@ -92,6 +92,12 @@ def source_panel() -> tuple[str, Any] | None:
     """An explicit source action; a selected mode alone never loads data."""
     st.sidebar.markdown('<div class="az-eyebrow">AZ / WORKSPACE</div>', unsafe_allow_html=True)
     st.sidebar.markdown("### Data & session")
+    if st.session_state.get("public_demo", False):
+        st.sidebar.warning(FIXTURE_LABEL)
+        st.sidebar.caption("Public demo · synthetic inputs only. Each visitor has a separate desk session. File uploads and live connections are unavailable in this version.")
+        if st.sidebar.button("Load engineering fixture", key="load_fixture"):
+            return "fixture", None
+        return None
     source = st.sidebar.radio(
         "Source mode",
         ["Authorized local data", FIXTURE_LABEL, "Live connection"],
@@ -143,8 +149,12 @@ def onboarding() -> None:
         if run_action(lambda: install_source("fixture", None), "Synthetic demonstration loaded."):
             st.session_state["pending_source_mode"] = FIXTURE_LABEL
             st.rerun()
-    right.caption("Synthetic inputs only. To use your own snapshot, open Data & session in the sidebar.")
-    st.info("No market snapshot loaded. Choose an authorized local file to begin, or explicitly load the synthetic demo.")
+    if st.session_state.get("public_demo", False):
+        right.caption("Public demonstration · synthetic inputs only · no file uploads.")
+        st.info("No market snapshot loaded. Start the synthetic demo to explore volatility, quotes and hedge risk.")
+    else:
+        right.caption("Synthetic inputs only. To use your own snapshot, open Data & session in the sidebar.")
+        st.info("No market snapshot loaded. Choose an authorized local file to begin, or explicitly load the synthetic demo.")
     left, middle, right = st.columns(3)
     with left, st.container(border=True):
         st.markdown("**01 / Shape the volatility**")
@@ -156,6 +166,9 @@ def onboarding() -> None:
         st.markdown("**03 / Challenge the risk**")
         st.write("Stress the spread and volatility independently. Inspect what remains.")
     st.caption("An engineering fixture is available only through its explicit source mode.")
+    if st.session_state.get("public_demo", False):
+        st.caption("Use the local application for authorized market-data imports. This public demonstration is limited to the supplied synthetic contracts.")
+        return
     with st.expander("What the desk expects"):
         st.write(
             "Use an authorized local snapshot with named futures contracts, "
@@ -362,11 +375,14 @@ def render_volatility(desk: Any) -> None:
         st.caption(desk.draft_vol.version_id)
         with st.expander("Import volatility nodes into Draft"):
             st.caption("JSON: a VolVersion or array of nodes. CSV: VolNode fields, with underlyings as a JSON array. Values use explicit base units: decimal_annual for lognormal; usd_per_bbl_sqrt_year for normal.")
-            uploaded_nodes = st.file_uploader("Volatility nodes · JSON or CSV", type=["json", "csv"], key="vol_upload")
-            if st.button("Stage imported volatility", disabled=uploaded_nodes is None, key="stage_vol_upload"):
-                run_action(lambda: desk.set_draft(parse_volatility_upload(uploaded_nodes.getvalue(), uploaded_nodes.name)), "Imported nodes staged. Preview validates units, coverage, and price diagnostics.")
-                st.session_state.pop("preview_generation", None)
-                st.rerun()
+            if st.session_state.get("public_demo", False):
+                st.caption("File import is available in the local app. In this public demo, edit the supplied synthetic nodes below.")
+            else:
+                uploaded_nodes = st.file_uploader("Volatility nodes · JSON or CSV", type=["json", "csv"], key="vol_upload")
+                if st.button("Stage imported volatility", disabled=uploaded_nodes is None, key="stage_vol_upload"):
+                    run_action(lambda: desk.set_draft(parse_volatility_upload(uploaded_nodes.getvalue(), uploaded_nodes.name)), "Imported nodes staged. Preview validates units, coverage, and price diagnostics.")
+                    st.session_state.pop("preview_generation", None)
+                    st.rerun()
         normal_tab, lognormal_tab = st.tabs(["CSO · normal", "Vanilla · lognormal"])
         for model, container in [("normal", normal_tab), ("lognormal", lognormal_tab)]:
             with container:
@@ -612,9 +628,10 @@ def loaded_desk(desk: Any) -> None:
     portfolio_controls(desk)
 
 
-def main() -> None:
+def main(*, public_demo: bool = False) -> None:
     st.set_page_config(page_title="WTI Options Desk | Antony Zuo", page_icon=str(Path(__file__).parent / "assets" / "az-mark.svg"), layout="wide", initial_sidebar_state="collapsed")
     st.set_option("client.toolbarMode", "minimal")
+    st.session_state["public_demo"] = public_demo
     st.markdown(DESK_CSS, unsafe_allow_html=True)
     masthead(loaded="desk" in st.session_state)
     if "pending_source_mode" in st.session_state:

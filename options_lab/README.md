@@ -6,6 +6,10 @@ The presentation is branded **Built by Antony Zuo**. The opening **Desk overview
 
 ## Start locally
 
+For a shareable browser URL, see [public deployment instructions](DEPLOY.md).
+The cloud entrypoint is `options_lab/cloud_app.py`; deployment remains pending
+until a hosted URL and access have been verified.
+
 From the repository root:
 
 ```bash
