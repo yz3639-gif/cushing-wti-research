@@ -1,22 +1,45 @@
-# Cushing Inventory Stress & WTI Calendar Spreads
+# WTI Options Desk & Cushing Inventory Research
 
-**Yuang Zuo · Independent commodities research**
+**Antony Zuo (Yuang Zuo) · Independent commodities research**
 
-How does Cushing inventory relative to its seasonal history relate to the WTI curve, and where does that relationship break down?
+Adjust volatility. Inspect the quote. Choose a proxy hedge. See what remains at risk.
 
-[Read the four-page memo](https://yz3639-gif.github.io/cushing-wti-research/research_memo.pdf) · [Explore the report](https://yz3639-gif.github.io/cushing-wti-research/) · [View the notebook](research_walkthrough.ipynb) · [Three-minute guide](docs/PORTFOLIO_GUIDE.md)
+[![Open interactive WTI Options Desk](docs/options-desk/open-demo.svg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)
 
-[Download the complete research package](https://github.com/yz3639-gif/cushing-wti-research/releases/latest) — reports, data snapshot, source code and reproduction instructions.
+[Inventory research](https://yz3639-gif.github.io/cushing-wti-research/research/) · [Python engine](options_lab/README.md) · [Validation & limits](options_lab/VALIDATION.md) · [Demo case checks](docs/options-desk/verification.json)
 
-## Companion project: WTI Options Desk
+No installation or sign-in. The public desk selects **45 precomputed Python-engine cases using synthetic inputs**; it does not use live market data or run an online optimizer.
 
-**[Open the interactive WTI Options Desk demo](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)** — no installation or sign-in. Built by Antony Zuo. Explore 45 exact precomputed scenarios with Draft / Apply volatility controls, indicative quotes, integer proxy hedges and residual stress risk. [Public demo details](options_lab/DEPLOY.md)
+[![WTI Options Desk showing volatility inputs, indicative quotes, integer hedge tickets and remaining scenario risk](docs/options-desk/preview.jpg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)
+
+*Actual application view. Built by Antony Zuo. Hypothetical scenario losses are net of estimated costs; they are not historical performance or loss bounds.*
+
+## Try the desk in 30 seconds
+
+1. Select **Snapshot 1**, then move **CSO normal volatility** to **+1.0**. Preview compares the stored case at the same market prices and positions.
+2. Click **Apply draft**. Model price, indicative quote, hedge ticket and residual risk update together from one result bundle.
+3. Compare **No hedge**, **Futures only** and **Futures + vanilla options**. Inspect the stress where CSO volatility rises while vanilla volatility stays flat. Direct CSO hedging is blocked.
+
+| Explore | What it demonstrates | Evidence boundary |
+|---|---|---|
+| [WTI Options Desk](https://yz3639-gif.github.io/cushing-wti-research/options-desk/) | Volatility workflow, indicative quotes, integer proxy hedges and residual scenario risk | Synthetic inputs; 45 precomputed evaluations; bounded-search feasible proposals |
+| [Cushing inventory research](https://yz3639-gif.github.io/cushing-wti-research/research/) | Inventory conditions, calendar spreads and historical stability checks | 481 matched public-data observations; descriptive and exploratory research |
+
+## WTI Options Desk: implementation and limits
 
 The complete [WTI Options Desk](options_lab/README.md) is an independent local Python/Streamlit tool for editable CSO and vanilla volatility, indicative quotes, integer proxy hedges and residual stress risk. It includes portable sessions, historical evaluation of the desk policy and regression tests. [Validation evidence and limits](options_lab/VALIDATION.md) · [Optional CI template](options_lab/ci/options-desk.yml.example)
 
-The included options data is explicitly synthetic. The public walkthrough selects stored Python-engine evaluations; it is not an online solver. Real options-data acceptance, empirical hedge improvement and live-feed acceptance remain pending. This extension does not change the inventory research results below and is not included in the original v1.0.0 research ZIP. The website root remains the inventory research report; the desk lives at `/options-desk/`.
+Real options-data acceptance, empirical hedge improvement and live-feed acceptance remain pending. This extension does not change the inventory research results below and is not included in the original v1.0.0 research ZIP. [Public demo details and reproduction](options_lab/DEPLOY.md)
 
-## Research answer
+## Cushing inventory research
+
+How does Cushing inventory relative to its seasonal history relate to the WTI curve, and where does that relationship break down?
+
+[Read the four-page memo](https://yz3639-gif.github.io/cushing-wti-research/research_memo.pdf) · [Explore the report](https://yz3639-gif.github.io/cushing-wti-research/research/) · [View the notebook](research_walkthrough.ipynb) · [Three-minute research guide](docs/PORTFOLIO_GUIDE.md)
+
+[Download the original research package](https://github.com/yz3639-gif/cushing-wti-research/releases/latest) — reports, data snapshot, source code and reproduction instructions.
+
+### Research answer
 
 **Lower seasonal inventories coincide with stronger nearby WTI spreads in the pooled history. Evidence for additional nonlinear shape is weak after controlling for year and season.** Inventory provides context for investigating physical conditions; these results do not establish a profitable trading rule.
 

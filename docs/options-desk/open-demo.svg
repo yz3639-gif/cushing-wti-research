@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="290" height="50" viewBox="0 0 290 50" role="img" aria-labelledby="title">
+  <title id="title">Open interactive WTI Options Desk</title>
+  <rect width="290" height="50" rx="5" fill="#edba68"/>
+  <text x="20" y="31" fill="#0b1118" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">OPEN INTERACTIVE DESK</text>
+  <path d="M257 19h11v11m0-11-14 14" stroke="#0b1118" stroke-width="2" fill="none"/>
+</svg>

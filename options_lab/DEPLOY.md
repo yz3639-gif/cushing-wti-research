@@ -47,6 +47,10 @@ termination can affect incumbents; preserve source and diagnostic metadata.
 
 GitHub Pages publishes `main:/docs`. The inventory report at the website root and
 its research outputs are independent. Publishing the demo does not replace them.
+The [research navigation view](https://yz3639-gif.github.io/cushing-wti-research/research/)
+embeds the unchanged report and provides a return link to the desk. The repository
+homepage uses `docs/options-desk/preview.jpg`, captured from the actual application
+at Snapshot 1 with both volatility shifts at zero.
 
 ## Full online Python application
 
