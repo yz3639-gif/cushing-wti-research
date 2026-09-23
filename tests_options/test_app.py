@@ -1,6 +1,7 @@
 """User-visible state transitions, without a feed or network connection."""
 
 from pathlib import Path
+from dataclasses import replace
 import json
 
 from streamlit.testing.v1 import AppTest
@@ -136,3 +137,37 @@ def test_volatility_import_preserves_explicit_model_units():
     assert imported[1].value == 3.2
     assert imported[1].unit == "usd_per_bbl_sqrt_year"
     assert imported[1].underlyings == ("CLM27", "CLN27")
+
+
+def test_demo_entry_explicitly_loads_fixture_and_preserves_source_label():
+    app = open_app()
+    assert "desk" not in app.session_state
+    app.button(key="explore_demo").click().run(timeout=30)
+    assert not app.exception
+    assert app.radio(key="source_mode").value == FIXTURE_LABEL
+    assert app.session_state["fixture_selected"] is True
+    assert app.session_state["desk"].market.mode == "engineering_fixture"
+
+
+def test_overview_does_not_show_suppressed_hedge_baselines_as_usable_results():
+    app = fixture_app()
+    desk = app.session_state["desk"]
+    desk.refresh(replace(desk.market, feed_alive=False, sequence=desk.market.sequence + 1))
+    app.run(timeout=30)
+    assert not app.exception
+    cards = {metric.label: metric.value for metric in app.metric}
+    assert cards["Proxy hedge · estimated cost"] == "Unavailable"
+    assert cards["Proxy hedge · worst scenario loss"] == "Unavailable"
+    assert any("Proxy hedge unavailable" in notice.value for notice in app.warning)
+
+
+def test_overview_resolves_engine_default_cso_when_target_id_is_empty():
+    app = fixture_app()
+    desk = app.session_state["desk"]
+    desk.set_inputs(desk.portfolio, replace(desk.settings, target_id=""))
+    app.run(timeout=30)
+    assert not app.exception
+    expected = next(row for row in desk.bundle["prices"] if row["kind"] == "cso")
+    cards = [metric for metric in app.metric if metric.label == "CSO normal vol · $/bbl/√yr"]
+    assert cards[0].value == f"{expected['vol']:,.3f}"
+    assert not any("No quote available" in notice.value for notice in app.info)

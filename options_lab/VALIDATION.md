@@ -12,6 +12,7 @@ integer proxy hedges → residual scenario risk. It does not route orders.
 |---|---|
 | Post-repair full suite | 235 tests passed; no failures or skips |
 | Publication portability checks | 237 tests passed, including two fresh-clone preservation-baseline regressions |
+| Presentation regression suite | 240 tests passed; explicit demo entry, default target resolution and suppressed-hedge display covered |
 | Warm core benchmark | 20 contracts, 100 scenarios, 1,000 distinct changing input states |
 | p95 / maximum update time | 0.121931 / 0.219564 seconds |
 | Update failures | 0 |

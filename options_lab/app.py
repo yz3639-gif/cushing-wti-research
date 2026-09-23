@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from dataclasses import replace
+from html import escape
 import json
 import sys
 import time
@@ -18,6 +19,7 @@ import streamlit as st
 
 from options_lab.ui import DESK_CSS, json_bytes, node_figure, plain, parse_volatility_upload
 from options_lab.models import MarketSnapshot, Position, Settings, VolNode
+from options_lab.presentation import footer, html, masthead, overview, valid_hedge
 
 FIXTURE_LABEL = "Engineering fixture – not market data"
 
@@ -88,7 +90,8 @@ def volatility_table(version: Any) -> None:
 
 def source_panel() -> tuple[str, Any] | None:
     """An explicit source action; a selected mode alone never loads data."""
-    st.sidebar.markdown("### Data source")
+    st.sidebar.markdown('<div class="az-eyebrow">AZ / WORKSPACE</div>', unsafe_allow_html=True)
+    st.sidebar.markdown("### Data & session")
     source = st.sidebar.radio(
         "Source mode",
         ["Authorized local data", FIXTURE_LABEL, "Live connection"],
@@ -131,17 +134,27 @@ def source_panel() -> tuple[str, Any] | None:
 
 
 def onboarding() -> None:
-    st.info("No market snapshot loaded. Choose an authorized local file to begin.")
+    html('<div class="az-empty"><div class="az-eyebrow">FROM A VOLATILITY VIEW TO A HEDGE DECISION</div>'
+         '<h2>One change.<br>Every consequence.</h2>'
+         '<p>Adjust a calendar-spread volatility input. Inspect the quote, the proxy hedge, '
+         'and the exposure that remains.</p></div>')
+    left, right = st.columns([1, 2])
+    if left.button("Explore the synthetic demo →", key="explore_demo", type="primary", use_container_width=True):
+        if run_action(lambda: install_source("fixture", None), "Synthetic demonstration loaded."):
+            st.session_state["pending_source_mode"] = FIXTURE_LABEL
+            st.rerun()
+    right.caption("Synthetic inputs only. To use your own snapshot, open Data & session in the sidebar.")
+    st.info("No market snapshot loaded. Choose an authorized local file to begin, or explicitly load the synthetic demo.")
     left, middle, right = st.columns(3)
     with left, st.container(border=True):
-        st.markdown("**01 · Verify the inputs**")
-        st.write("Identified futures months, option terms, observation times, and source.")
+        st.markdown("**01 / Shape the volatility**")
+        st.write("Stage a change. Compare it against the same market before applying.")
     with middle, st.container(border=True):
-        st.markdown("**02 · Preview a change**")
-        st.write("Compare Market, Draft, and Active volatility with explicit units.")
+        st.markdown("**02 / Build the proxy hedge**")
+        st.write("See buy and sell quantities in whole contracts, with estimated costs.")
     with right, st.container(border=True):
-        st.markdown("**03 · Inspect one bundle**")
-        st.write("Model value, quote assumptions, integer hedges, and scenario risk.")
+        st.markdown("**03 / Challenge the risk**")
+        st.write("Stress the spread and volatility independently. Inspect what remains.")
     st.caption("An engineering fixture is available only through its explicit source mode.")
     with st.expander("What the desk expects"):
         st.write(
@@ -210,6 +223,8 @@ def render_result(bundle: dict[str, Any], *, preview: bool = False) -> None:
         metrics[0].metric("CSO model value · USD/bbl", "Unavailable")
     for column, strategy, name in zip(metrics[1:], ["unhedged", "delta", "proxy"], ["Unhedged", "Futures-only hedge", "Proxy hedge"]):
         loss = summary.get(strategy, {}).get("worst_loss")
+        if strategy != "unhedged" and not valid_hedge(bundle.get("hedges", {}).get(strategy, {})):
+            loss = None
         column.metric(f"{name} · worst scenario loss", "Unavailable" if loss is None else f"${loss:,.0f}")
     price_tab, quote_tab, hedge_tab, risk_tab = st.tabs(["Pricing", "Modeled quotes", "Integer hedges", "Stress"])
     with price_tab:
@@ -234,6 +249,8 @@ def render_result(bundle: dict[str, Any], *, preview: bool = False) -> None:
                     st.error("No compliant hedge proposal: the full final portfolio must satisfy position limits.")
                 if hedge.get("message"):
                     st.write(hedge["message"])
+                if not valid_hedge(hedge):
+                    st.warning("No usable hedge proposal. Any retained numerical arrays below are diagnostic baselines, not a completed hedge.")
                 render_payload("Trades · integer contracts", hedge.get("trades", []))
                 render_payload("Cost and residual risk · USD", {k: v for k, v in hedge.items() if k not in ["trades", "message", "status"]})
     with risk_tab:
@@ -241,7 +258,7 @@ def render_result(bundle: dict[str, Any], *, preview: bool = False) -> None:
         scenarios = risk.get("scenarios", [])
         if scenarios:
             frame = pd.DataFrame(scenarios)
-            columns = [key for key in ["unhedged", "delta_net", "proxy_net"] if key in frame]
+            columns = [key for key in ["unhedged", "delta_net", "proxy_net"] if key in frame and (key == "unhedged" or valid_hedge(bundle.get("hedges", {}).get(key.removesuffix("_net"), {})))]
             if "name" in frame and columns:
                 named = frame.loc[frame["category"] != "joint"] if "category" in frame else frame
                 plotted = named.set_index("name")[columns].rename(columns={"unhedged": "Unhedged", "delta_net": "Futures-only · net", "proxy_net": "Proxy · net"})
@@ -555,22 +572,36 @@ def portfolio_controls(desk: Any) -> None:
 
 def loaded_desk(desk: Any) -> None:
     if st.session_state.get("fixture_selected", False):
-        st.warning(FIXTURE_LABEL)
-    cols = st.columns([2, 2, 1])
-    cols[0].caption(f"Source: {desk.market.source or 'not supplied'}")
-    cols[1].caption(f"Observation: {desk.market.as_of}")
-    cols[2].caption(f"Mode: {desk.market.mode}")
+        st.warning("SYNTHETIC DEMO · Engineering fixture – not market data. Model quotes and hypothetical risk only.")
+    mode_label = "Manual volatility · locked" if desk.mode == "manual" else "Following market calibration"
+    html(f'<div class="az-source-strip"><span>SNAPSHOT <strong>{escape(desk.market.as_of)}</strong></span>'
+         f'<span>VOLATILITY <strong>{mode_label}</strong></span>'
+         '<span>EXECUTION <strong>Not connected</strong></span></div>')
     if not desk.market.feed_alive:
         st.error("Source reports feed unavailable. Inspect quote suppression and the last valid bundle.")
     if desk.error:
         st.error(f"Update failed: {desk.error}. Inspect the current calculation status below.")
     for warning in st.session_state.get("import_warnings", ()):
+        if st.session_state.get("fixture_selected", False) and warning == "SYNTHETIC ENGINEERING FIXTURE — not observed WTI prices or real-data calibration.":
+            continue  # The persistent synthetic banner already carries this exact source notice.
         st.warning(str(warning))
+    overview_tab, vol_tab, desk_tab = st.tabs(["Desk overview", "Volatility workspace", "Valuation & risk"])
+    with overview_tab:
+        overview(desk)
+    with vol_tab:
+        render_volatility(desk)
+    with desk_tab:
+        render_result(desk.bundle)
+    st.markdown('<div class="desk-rule"></div>', unsafe_allow_html=True)
     replay_controls()
     if st.session_state.get("replay_failures"):
         with st.expander("Replay failure log"):
             render_payload("Consumed records with errors", st.session_state["replay_failures"])
     with st.expander("Source provenance and imported observations"):
+        st.text(f"Source: {desk.market.source or 'not supplied'}")
+        st.text(f"Data mode: {desk.market.mode}")
+        for warning in st.session_state.get("import_warnings", ()):
+            st.caption(str(warning))
         st.text(f"Snapshot: {desk.market.snapshot_id}")
         st.text(f"Import SHA-256: {st.session_state.get('source_sha256', 'unavailable')}")
         if st.session_state.get("restored_session_sha256"):
@@ -579,22 +610,15 @@ def loaded_desk(desk: Any) -> None:
         render_payload("Contracts", desk.market.contracts)
         render_payload("Observed quotes or settlements", desk.market.quotes)
     portfolio_controls(desk)
-    vol_tab, desk_tab = st.tabs(["Volatility workspace", "Valuation & risk"])
-    with vol_tab:
-        render_volatility(desk)
-    with desk_tab:
-        render_result(desk.bundle)
 
 
 def main() -> None:
-    st.set_page_config(page_title="WTI Options Desk Lab", page_icon="◈", layout="wide")
+    st.set_page_config(page_title="WTI Options Desk | Antony Zuo", page_icon=str(Path(__file__).parent / "assets" / "az-mark.svg"), layout="wide", initial_sidebar_state="collapsed")
+    st.set_option("client.toolbarMode", "minimal")
     st.markdown(DESK_CSS, unsafe_allow_html=True)
-    st.markdown('<div class="desk-kicker">Local research workstation</div>', unsafe_allow_html=True)
-    st.title("WTI Options Desk")
-    st.markdown(
-        '<div class="desk-subtitle">Calendar-spread valuation · proxy hedges · versioned risk</div>',
-        unsafe_allow_html=True,
-    )
+    masthead(loaded="desk" in st.session_state)
+    if "pending_source_mode" in st.session_state:
+        st.session_state["source_mode"] = st.session_state.pop("pending_source_mode")
     action = source_panel()
     if action:
         if run_action(lambda: install_source(*action), "Local source loaded and validated."):
@@ -602,7 +626,11 @@ def main() -> None:
             st.rerun()
     notice = st.session_state.get("desk_notice")
     if notice:
-        getattr(st, notice[0])(notice[1])
+        if notice[0] == "success":
+            st.toast(notice[1])
+            st.session_state.pop("desk_notice", None)
+        else:
+            getattr(st, notice[0])(notice[1])
     if "desk" in st.session_state:
         loaded_desk(st.session_state["desk"])
         if st.sidebar.button("Clear local session", key="clear_session"):
@@ -611,6 +639,7 @@ def main() -> None:
             st.rerun()
     else:
         onboarding()
+    footer()
 
 
 if __name__ == "__main__":

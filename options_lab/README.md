@@ -2,6 +2,8 @@
 
 A local Streamlit desk for a WTI calendar-spread option, editable volatility inputs, proxy hedges, and scenario risk. This is a separate application beside the Cushing inventory research package. It does not alter that research or route orders.
 
+The presentation is branded **Built by Antony Zuo**. The opening **Desk overview** shows a supplied-node volatility slice, indicative quote sizes, whole-contract hedge tickets, and a cost-inclusive scenario comparison. **Volatility workspace** retains the editable Market / Draft / Active workflow; **Valuation & risk** exposes complete records. Unavailable or suppressed hedge proposals are excluded from the overview's risk comparison rather than displayed as successful zero-cost hedges.
+
 ## Start locally
 
 From the repository root:
@@ -15,6 +17,8 @@ python3.12 -m venv .venv-options
 On macOS, double-click `run_options_desk.command` after installation, or run it from the repository root. It binds only to `127.0.0.1` on port 8501.
 
 The default screen contains no market prices. Load a local snapshot that you are authorized to use. To inspect the engineering workflow without market data, explicitly select **Engineering fixture – not market data** and load it. The fixture label stays visible throughout that session.
+
+The home screen's **Explore the synthetic demo** button performs the same explicit fixture load. Open the collapsed **Data & session** sidebar for file import and full-session recovery. A repository-local `.streamlit/config.toml` supplies the dark theme; start from the repository root to use it.
 
 ## Working with a snapshot
 
