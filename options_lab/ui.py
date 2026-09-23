@@ -188,7 +188,7 @@ DESK_CSS = """
   }
   .az-trade-row:last-child { border-bottom: 0; }
   .az-trade-side { color: var(--az-teal); font-size: .64rem; letter-spacing: .06em; }
-  .az-trade-side.sell { color: var(--az-amber); }
+  .az-trade-side.sell, .az-trade-side.az-ask { color: var(--az-amber); }
   .az-insight {
     padding: 15px 17px; margin: 5px 0; border-left: 2px solid var(--az-teal);
     border-radius: 0 7px 7px 0; background: #6dd8c009; color: #b9cdc9; font-size: .8rem; line-height: 1.6;
