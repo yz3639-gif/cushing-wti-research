@@ -139,7 +139,7 @@ def test_challenge_matrix_tampering_is_detected_by_full_repricing(evidence):
 def test_invalid_shocks_are_rejected_before_publication(evidence, scenario, match):
     _, demo, source, settings = evidence
     snapshot = source.snapshots[0]
-    version = risk_lab._version(demo["cases"][0], snapshot, source.portfolio, settings)
+    version = risk_lab._version(demo["cases"][0], snapshot, source.portfolio, settings, demo["snapshots"][0])
     with pytest.raises(ValueError, match=match):
         risk_lab.unit_pnl(snapshot, version, [scenario])
 
@@ -151,3 +151,46 @@ def test_unknown_omitted_leg_and_negative_cost_scale_are_rejected(evidence):
         risk_lab.fixed_ticket(*args, excluded=["NOT_A_TICKET_LEG"])
     with pytest.raises(ValueError, match="Invalid cost scale"):
         risk_lab.fixed_ticket(*args, cost_scale=-1)
+
+
+def test_recalibration_roundoff_keeps_exact_recorded_version(evidence, monkeypatch):
+    _, demo, source, settings = evidence
+    calibrate = risk_lab.calibrate_market
+
+    def next_float(snapshot):
+        market = calibrate(snapshot)
+        return replace(market, nodes=tuple(replace(n, value=math.nextafter(n.value, math.inf))
+                                           for n in market.nodes))
+
+    monkeypatch.setattr(risk_lab, "calibrate_market", next_float)
+    for case in demo["cases"]:
+        index = case["snapshot_index"]
+        version = risk_lab._version(case, source.snapshots[index], source.portfolio,
+                                    settings, demo["snapshots"][index])
+        assert version.version_id == case["bundle"]["vol_version_id"]
+        assert [n.value for n in version.nodes] == [n["value"] for n in case["active_nodes"]]
+
+
+def test_material_recalibration_change_is_rejected(evidence, monkeypatch):
+    _, demo, source, settings = evidence
+    calibrate = risk_lab.calibrate_market
+
+    def wrong_value(snapshot):
+        market = calibrate(snapshot)
+        return replace(market, nodes=(replace(market.nodes[0], value=market.nodes[0].value + 1e-6),
+                                      *market.nodes[1:]))
+
+    monkeypatch.setattr(risk_lab, "calibrate_market", wrong_value)
+    with pytest.raises(ValueError, match="Market calibration value mismatch"):
+        risk_lab._version(demo["cases"][0], source.snapshots[0], source.portfolio,
+                          settings, demo["snapshots"][0])
+
+
+@pytest.mark.parametrize("target", ["market_nodes", "active_nodes"])
+def test_recorded_nodes_cannot_change_even_by_one_ulp(evidence, target):
+    _, demo, source, settings = evidence
+    case, snapshot = deepcopy(demo["cases"][0]), deepcopy(demo["snapshots"][0])
+    nodes = snapshot[target] if target == "market_nodes" else case[target]
+    nodes[0]["value"] = math.nextafter(nodes[0]["value"], math.inf)
+    with pytest.raises(ValueError, match="volatility identity mismatch"):
+        risk_lab._version(case, source.snapshots[0], source.portfolio, settings, snapshot)

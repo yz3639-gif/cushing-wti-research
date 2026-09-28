@@ -66,13 +66,13 @@ From the repository root, in the isolated options environment:
 .venv-options/bin/python -m options_lab.validate --updates 1000
 ```
 
-The [optional CI template](ci/options-desk.yml.example) runs the full options suite
-and the original-research preservation gate on Linux once enabled. Copy it to
-`.github/workflows/options-desk.yml` using credentials that can manage workflows.
-The publishing credential could not add a workflow, so **this template is not
-active and no options-specific cloud CI pass is claimed**. The recorded options
-suite results above are local. Existing research CI continues to cover the
-original inventory project.
+The [Options CI workflow](../.github/workflows/options-desk.yml) runs the full
+options suite, Risk Lab Python and browser checks, and the original-research
+preservation gate on Linux. The [Actions history](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/options-desk.yml)
+is the source for a particular commit's remote result; the historical suite
+counts above remain dated local observations. The earlier
+[workflow template](ci/options-desk.yml.example) is retained as a reference.
+Existing research CI continues to cover the original inventory project.
 The checked-in [preservation manifest](examples/research_baseline.json) contains
 only paths and SHA-256 hashes of already-public research files. A local pre-change
 manifest takes precedence when available. Missing baselines fail acceptance

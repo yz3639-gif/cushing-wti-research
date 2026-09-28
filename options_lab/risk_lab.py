@@ -88,11 +88,24 @@ def _inputs(root):
     return demo, source, settings
 
 
-def _version(case, snapshot, portfolio, settings):
+def _version(case, snapshot, portfolio, settings, saved_snapshot):
     metadata = case["active_vol_metadata"]
     version = VolVersion(tuple(VolNode.from_dict(n) for n in case["active_nodes"]),
                          metadata["label"], metadata["origin"], metadata["parent_id"], metadata["created_at"])
-    market = calibrate_market(snapshot)
+    # Recorded nodes determine identity. Fresh IV inversion can differ by a few
+    # floating-point ULPs across supported platforms and is a numerical check,
+    # not a replacement for the immutable, hashed market version.
+    market = VolVersion(tuple(VolNode.from_dict(n) for n in saved_snapshot["market_nodes"]),
+                        "Market calibration", "calibrated", None, snapshot.as_of)
+    require(market.version_id == saved_snapshot["market_vol_version_id"],
+            "Saved market volatility identity mismatch")
+    recalibrated = calibrate_market(snapshot)
+    require(len(market.nodes) == len(recalibrated.nodes), "Market calibration coverage mismatch")
+    for recorded, fresh in zip(market.nodes, recalibrated.nodes):
+        require(replace(fresh, value=recorded.value) == recorded,
+                "Market calibration metadata mismatch")
+        require(math.isclose(recorded.value, fresh.value, rel_tol=0.0, abs_tol=1e-10),
+                "Market calibration value mismatch")
     if case["cso_shift"] or case["vanilla_shift_pp"]:
         nodes = tuple(replace(n, value=n.value + (case["cso_shift"] if n.model == "normal"
                                                  else case["vanilla_shift_pp"] / 100),
@@ -204,7 +217,7 @@ def validate_sidecar(artifact, root=ROOT, *, reprice=True):
         require(case is not None, "Missing original case")
         index = original["snapshot_index"]
         snapshot, saved_snapshot = source.snapshots[index], demo["snapshots"][index]
-        version = _version(original, snapshot, source.portfolio, settings)
+        version = _version(original, snapshot, source.portfolio, settings, saved_snapshot)
         for key in ("bundle_id", "snapshot_id", "vol_version_id", "portfolio_id", "settings_id"):
             require(case[key] == bundle[key], f"Sidecar {key} mismatch")
         for key in ("snapshot_index", "cso_shift", "vanilla_shift_pp"):
@@ -286,7 +299,8 @@ def build_sidecar(root=ROOT):
     }, scenario_sets={k: [asdict(s) for s in v] for k, v in groups.items()}, cases=[])
     for original in demo["cases"]:
         snapshot = source.snapshots[original["snapshot_index"]]
-        version = _version(original, snapshot, source.portfolio, settings)
+        version = _version(original, snapshot, source.portfolio, settings,
+                           demo["snapshots"][original["snapshot_index"]])
         case = {key: original["bundle"][key] for key in
                 ("bundle_id", "snapshot_id", "vol_version_id", "portfolio_id", "settings_id")}
         case.update({key: original[key] for key in ("snapshot_index", "cso_shift", "vanilla_shift_pp")})

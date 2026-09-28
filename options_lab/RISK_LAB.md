@@ -23,6 +23,12 @@ snapshot, portfolio, settings, active-volatility and bundle identities before
 recomputing unit-contract P&L. The original demo data and verification record
 remain unchanged. The exporter does not call a hedge optimizer.
 
+Recorded market and active nodes retain their exact version IDs. Independent
+volatility recalibration allows an absolute `1e-10` numerical difference for
+cross-platform floating-point roundoff; node metadata and saved identities must
+still match exactly. A changed saved node, including a one-ULP change, fails the
+identity gate. The full repricing and dollar reconciliation checks remain in force.
+
 ## Sidecar schema 1.0
 
 - `meta.base_demo_sha256` binds the exact original demo bytes. A browser must

@@ -2,6 +2,8 @@
 
 **YZ · Cornell · Quantitative Research & Options Risk**
 
+[![Research checks on main](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/research.yml/badge.svg?branch=main)](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/research.yml?query=branch%3Amain) [![Options desk checks on main](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/options-desk.yml/badge.svg?branch=main)](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/options-desk.yml?query=branch%3Amain)
+
 **What remains at risk after a proxy hedge?** A Python options desk connecting volatility inputs to indicative quotes, whole-contract hedge tickets and cost-inclusive scenario losses.
 
 **45 stored cases · 100 stress scenarios · explicit trading costs**
@@ -37,7 +39,7 @@ Synthetic engineering demonstration: the public desk uses precomputed Python-eng
 
 ## WTI Options Desk: implementation and limits
 
-The complete [WTI Options Desk](options_lab/README.md) is an independent local Python/Streamlit tool for editable CSO and vanilla volatility, indicative quotes, integer proxy hedges and residual stress risk. It includes portable sessions, historical evaluation of the desk policy and regression tests. [Validation evidence and limits](options_lab/VALIDATION.md) · [Optional CI template](options_lab/ci/options-desk.yml.example)
+The complete [WTI Options Desk](options_lab/README.md) is an independent local Python/Streamlit tool for editable CSO and vanilla volatility, indicative quotes, integer proxy hedges and residual stress risk. It includes portable sessions, historical evaluation of the desk policy and regression tests. [Validation evidence and limits](options_lab/VALIDATION.md) · [Options CI workflow](.github/workflows/options-desk.yml)
 
 Real options-data acceptance, empirical hedge improvement and live-feed acceptance remain pending. This extension does not change the inventory research results below and is not included in the original v1.0.0 research ZIP. [Public demo details and reproduction](options_lab/DEPLOY.md)
 
