@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1118">
-  <meta name="description" content="An interactive WTI options walkthrough by Antony Zuo. Explore precomputed volatility, indicative quotes, proxy hedges and residual scenario risk using synthetic inputs.">
-  <title>WTI Options Desk | Antony Zuo</title>
-  <link rel="icon" href="az-mark.svg" type="image/svg+xml">
+  <meta name="description" content="WTI options valuation, integer proxy hedging and residual scenario risk. Explore fixed-ticket costs, individual hedge legs and additional synthetic stress scenarios. YZ · Cornell.">
+  <title>WTI Options Desk | YZ</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%230b1118'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='%236dd8c0' font-family='sans-serif' font-size='18'%3EYZ%3C/text%3E%3C/svg%3E" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header><div class="brand"><span class="monogram">AZ</span><div><b>ANTONY ZUO</b><small>ENERGY DERIVATIVES</small></div></div><div class="header-right"><a href="../research/">Inventory research ↗</a><a href="https://github.com/yz3639-gif/cushing-wti-research/tree/main/options_lab" target="_blank" rel="noopener noreferrer">View source ↗</a><span>Built by <strong>Antony Zuo</strong></span></div></header>
+  <header><div class="brand"><span class="monogram">YZ</span><div><b>YZ / CORNELL</b><small>QUANTITATIVE RESEARCH &amp; OPTIONS RISK</small></div></div><div class="header-right"><a href="../research/">Inventory research ↗</a><a href="https://github.com/yz3639-gif/cushing-wti-research/tree/main/options_lab" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="#risk-lab">Risk Lab ↓</a></div></header>
   <main>
-    <div class="title-row"><div><p class="eyebrow">WTI / VOLATILITY &amp; PROXY HEDGING</p><h1>The options desk.</h1></div><span class="pill">INTERACTIVE WALKTHROUGH</span></div>
+    <div class="title-row"><div><p class="eyebrow">WTI / VOLATILITY &amp; PROXY HEDGING</p><h1>WTI Options Desk</h1></div><span class="pill">SYNTHETIC DEMONSTRATION</span></div>
     <div class="notice"><strong>Synthetic inputs.</strong> Choose a preset and inspect results calculated by the Python desk engine. No live data, online solver, or order routing.</div>
     <div id="load-status" class="loading" role="status">Loading the desk…</div>
     <section id="workspace" hidden>
@@ -31,9 +31,10 @@
         <section class="panel"><div class="panel-heading"><div><span class="index">03</span><h2>What remains at risk</h2></div><span class="tag">NET OF COSTS</span></div><p class="muted">Worst loss across the same 100 configured scenarios · USD</p><div id="risk-chart" class="risk-chart"></div><div class="insight"><p class="eyebrow">THE RISK A PROXY CAN MISS</p><h3>CSO volatility rises.<br>Vanilla volatility stays flat.</h3><div class="basis-result"><span>Proxy P&amp;L under +1.0 normal vol</span><strong id="basis-loss"></strong></div><p class="footnote" id="basis-horizon"></p></div><p class="footnote">Hypothetical stress scenarios have no assigned probabilities and do not bound future loss.</p></section>
         <section class="panel"><div class="panel-heading"><div><span class="index">04</span><h2>The hedge ticket</h2></div><span class="tag">WHOLE CONTRACTS</span></div><p class="muted" id="solver"></p><div id="hedge-trades" class="hedge-trades"></div><div class="ticket-total"><span>Estimated trading cost</span><strong id="hedge-cost"></strong></div><p class="footnote">Futures and vanilla options. Solver status and costs belong to the same active result.</p></section>
       </div>
+      <section id="risk-lab" class="risk-lab" aria-label="Fixed-ticket Risk Lab"><h2>Risk Lab</h2><p class="muted" role="status">Verifying scenario data…</p></section>
       <details class="audit"><summary>Inspect the calculation &amp; assumptions</summary><div id="audit-meta"></div><div class="audit-grid"><div><h3>What you are seeing</h3><p>45 precomputed cases: three synthetic snapshots, five CSO volatility shifts, and three vanilla volatility shifts. Each case is evaluated independently by the original Python engine.</p><p>Selecting a new snapshot resets volatility to its market calibration. The sliders choose exact stored cases; they do not interpolate hedge quantities or run an online optimizer.</p></div><div><h3>What this does not establish</h3><p>No observed market data, historical hedge performance, executable quotes, or real-time connection is demonstrated. Limited-search solutions are feasible proposals, not proved optima.</p><p>The complete Python application supports arbitrary validated inputs and is available in the source repository.</p></div></div><button id="download" class="secondary">Download active result JSON</button><a href="verification.json" target="_blank" rel="noopener noreferrer">Case validation record ↗</a></details>
     </section>
   </main>
-  <footer><span>AZ / WTI OPTIONS DESK</span><span>Built by Antony Zuo · Engineering demonstration</span></footer>
+  <footer><span>YZ / WTI OPTIONS DESK</span><span>Cornell · Synthetic engineering demonstration</span></footer>
 </body>
 </html>

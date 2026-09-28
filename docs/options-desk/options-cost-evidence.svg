@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+<title id="title">Fixed-ticket WTI cost sensitivity</title>
+<desc id="desc">Synthetic snapshot 1, market volatility, 100 one-day scenarios. Source demo-data.json SHA-256 37b218d073690f565f5b8a6f858d2f726ad57efd847f4b2a36376a9d215a5b99, bundle bundle-4409fb4f564ec2ec9b19. Worst scenario loss equals max(0, -min(gross P&amp;L - scaled ticket cost)). The three strategies are no hedge, futures only, and futures plus options, shown at one, two, and four times recorded costs. The quantities stay fixed.</desc>
+<rect width="960" height="640" fill="#151d25"/>
+<g font-family="system-ui, -apple-system, Segoe UI, sans-serif" fill="#edf1f4">
+<text x="42" y="58" font-size="34" font-weight="600">Fixed tickets. Higher costs.</text>
+<text x="42" y="95" font-size="18" fill="#a7b3bf">Synthetic snapshot 1 · market volatility · 100 one-day stresses</text>
+<rect x="45" y="129" width="17" height="17" fill="#8897a7"/>
+<text x="73" y="143" font-size="18">No hedge</text>
+<rect x="300" y="129" width="17" height="17" fill="#e3bd78"/>
+<text x="328" y="143" font-size="18">Futures only</text>
+<rect x="555" y="129" width="17" height="17" fill="#8bddc8"/>
+<text x="583" y="143" font-size="18">Futures + options</text>
+<text x="88" y="192" font-size="15" fill="#a7b3bf">Worst scenario loss · USD</text>
+<line x1="88" x2="910" y1="510.0" y2="510.0" stroke="#33404d"/>
+<text x="76" y="515.0" font-size="15" text-anchor="end" fill="#a7b3bf">$0k</text>
+<line x1="88" x2="910" y1="455.1923076923077" y2="455.1923076923077" stroke="#33404d"/>
+<text x="76" y="460.1923076923077" font-size="15" text-anchor="end" fill="#a7b3bf">$5k</text>
+<line x1="88" x2="910" y1="400.38461538461536" y2="400.38461538461536" stroke="#33404d"/>
+<text x="76" y="405.38461538461536" font-size="15" text-anchor="end" fill="#a7b3bf">$10k</text>
+<line x1="88" x2="910" y1="345.5769230769231" y2="345.5769230769231" stroke="#33404d"/>
+<text x="76" y="350.5769230769231" font-size="15" text-anchor="end" fill="#a7b3bf">$15k</text>
+<line x1="88" x2="910" y1="290.7692307692307" y2="290.7692307692307" stroke="#33404d"/>
+<text x="76" y="295.7692307692307" font-size="15" text-anchor="end" fill="#a7b3bf">$20k</text>
+<line x1="88" x2="910" y1="235.96153846153845" y2="235.96153846153845" stroke="#33404d"/>
+<text x="76" y="240.96153846153845" font-size="15" text-anchor="end" fill="#a7b3bf">$25k</text>
+<rect x="132" y="259.95055214689216" width="52" height="250.04944785310786" fill="#8897a7"/>
+<text x="158" y="248.95055214689216" font-size="16" text-anchor="middle" fill="#8897a7" font-variant-numeric="tabular-nums">22,812</text>
+<rect x="407" y="259.95055214689216" width="52" height="250.04944785310786" fill="#8897a7"/>
+<text x="433" y="248.95055214689216" font-size="16" text-anchor="middle" fill="#8897a7" font-variant-numeric="tabular-nums">22,812</text>
+<rect x="682" y="259.95055214689216" width="52" height="250.04944785310786" fill="#8897a7"/>
+<text x="708" y="248.95055214689216" font-size="16" text-anchor="middle" fill="#8897a7" font-variant-numeric="tabular-nums">22,812</text>
+<rect x="198" y="414.8433273415625" width="52" height="95.1566726584375" fill="#e3bd78"/>
+<text x="224" y="403.8433273415625" font-size="16" text-anchor="middle" fill="#e3bd78" font-variant-numeric="tabular-nums">8,681</text>
+<rect x="473" y="413.6101542646389" width="52" height="96.38984573536113" fill="#e3bd78"/>
+<text x="499" y="402.6101542646389" font-size="16" text-anchor="middle" fill="#e3bd78" font-variant-numeric="tabular-nums">8,793</text>
+<rect x="748" y="411.14380811079155" width="52" height="98.85619188920843" fill="#e3bd78"/>
+<text x="774" y="400.14380811079155" font-size="16" text-anchor="middle" fill="#e3bd78" font-variant-numeric="tabular-nums">9,018</text>
+<rect x="264" y="425.41490725655717" width="52" height="84.58509274344283" fill="#8bddc8"/>
+<text x="290" y="414.41490725655717" font-size="16" text-anchor="middle" fill="#8bddc8" font-variant-numeric="tabular-nums">7,717</text>
+<rect x="539" y="416.38533994886416" width="52" height="93.61466005113586" fill="#8bddc8"/>
+<text x="565" y="405.38533994886416" font-size="16" text-anchor="middle" fill="#8bddc8" font-variant-numeric="tabular-nums">8,540</text>
+<rect x="814" y="398.32620533347813" width="52" height="111.67379466652186" fill="#8bddc8"/>
+<text x="840" y="387.32620533347813" font-size="16" text-anchor="middle" fill="#8bddc8" font-variant-numeric="tabular-nums">10,188</text>
+<text x="224" y="545" text-anchor="middle" font-size="19">1× costs</text>
+<text x="499" y="545" text-anchor="middle" font-size="19">2× costs</text>
+<text x="774" y="545" text-anchor="middle" font-size="19">4× costs</text>
+<text x="42" y="593" font-size="17" fill="#a7b3bf">Same integer quantities. No re-optimization. Synthetic engineering evidence.</text>
+<text x="42" y="623" font-size="15" fill="#a7b3bf">Worst loss = max(0, −min(gross P&amp;L − scaled ticket cost)).</text>
+</g></svg>

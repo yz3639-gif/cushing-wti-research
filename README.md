@@ -1,18 +1,30 @@
-# WTI Options Desk & Cushing Inventory Research
+# WTI Options Desk & Cushing / WTI Research
 
-**Antony Zuo (Yuang Zuo) · Independent commodities research**
+**YZ · Cornell · Quantitative Research & Options Risk**
 
-Adjust volatility. Inspect the quote. Choose a proxy hedge. See what remains at risk.
+[![Research checks on main](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/research.yml/badge.svg?branch=main)](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/research.yml?query=branch%3Amain) [![Options desk checks on main](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/options-desk.yml/badge.svg?branch=main)](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/options-desk.yml?query=branch%3Amain)
 
-[![Open interactive WTI Options Desk](docs/options-desk/open-demo.svg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)
+**What remains at risk after a proxy hedge?** A Python options desk connecting volatility inputs to indicative quotes, whole-contract hedge tickets and cost-inclusive scenario losses.
 
-[Inventory research](https://yz3639-gif.github.io/cushing-wti-research/research/) · [Python engine](options_lab/README.md) · [Validation & limits](options_lab/VALIDATION.md) · [Demo case checks](docs/options-desk/verification.json)
+**45 stored cases · 100 stress scenarios · explicit trading costs**
 
-No installation or sign-in. The public desk selects **45 precomputed Python-engine cases using synthetic inputs**; it does not use live market data or run an online optimizer.
+[**Open desk →**](https://yz3639-gif.github.io/cushing-wti-research/options-desk/) · [**Research →**](https://yz3639-gif.github.io/cushing-wti-research/research/) · [**Code →**](options_lab/README.md) · [Validation](options_lab/VALIDATION.md)
 
-[![WTI Options Desk showing volatility inputs, indicative quotes, integer hedge tickets and remaining scenario risk](docs/options-desk/preview.jpg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)
+Synthetic engineering demonstration: the public desk uses precomputed Python-engine cases. It has no live market data or online optimizer. Historical Cushing research is linked separately below.
 
-*Actual application view. Built by Antony Zuo. Hypothetical scenario losses are net of estimated costs; they are not historical performance or loss bounds.*
+[![Stored synthetic Snapshot 1: worst scenario loss at 1x, 2x and 4x costs for the original fixed hedge tickets](docs/options-desk/options-cost-evidence.svg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/#risk-lab)
+
+*Calculated from stored synthetic Snapshot 1 at market volatility, using all 100 one-day scenarios and unchanged hedge quantities. A data graphic, not historical performance or a loss bound. [Source and calculation](options_lab/RISK_LAB.md#readme-evidence-graphic).*
+
+## Fixed-ticket Risk Lab
+
+[Open the Risk Lab](https://yz3639-gif.github.io/cushing-wti-research/options-desk/#risk-lab) to inspect how the saved hedge responds to higher costs, omitted legs and a wider stress grid:
+
+- **1× / 2× / 4× costs:** compare fixed tickets and the cost at which the worst-loss advantage disappears.
+- **Remove a hedge leg:** inspect its contribution across all 100 original scenarios. This models not entering that leg; it is not a free close-out trade.
+- **12 extra challenges:** reprice the same ticket in predetermined synthetic stresses excluded from the optimization grid. Worsening results and limit breaches remain visible.
+
+[Calculation contract and reproduction](options_lab/RISK_LAB.md) · [Risk Lab evidence](docs/options-desk/risk-lab-data.json) · [Automated options checks](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/options-desk.yml)
 
 ## Try the desk in 30 seconds
 
@@ -27,7 +39,7 @@ No installation or sign-in. The public desk selects **45 precomputed Python-engi
 
 ## WTI Options Desk: implementation and limits
 
-The complete [WTI Options Desk](options_lab/README.md) is an independent local Python/Streamlit tool for editable CSO and vanilla volatility, indicative quotes, integer proxy hedges and residual stress risk. It includes portable sessions, historical evaluation of the desk policy and regression tests. [Validation evidence and limits](options_lab/VALIDATION.md) · [Optional CI template](options_lab/ci/options-desk.yml.example)
+The complete [WTI Options Desk](options_lab/README.md) is an independent local Python/Streamlit tool for editable CSO and vanilla volatility, indicative quotes, integer proxy hedges and residual stress risk. It includes portable sessions, historical evaluation of the desk policy and regression tests. [Validation evidence and limits](options_lab/VALIDATION.md) · [Options CI workflow](.github/workflows/options-desk.yml)
 
 Real options-data acceptance, empirical hedge improvement and live-feed acceptance remain pending. This extension does not change the inventory research results below and is not included in the original v1.0.0 research ZIP. [Public demo details and reproduction](options_lab/DEPLOY.md)
 
