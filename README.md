@@ -12,9 +12,9 @@
 
 Synthetic engineering demonstration: the public desk uses precomputed Python-engine cases. It has no live market data or online optimizer. Historical Cushing research is linked separately below.
 
-[![WTI Options Desk showing volatility inputs, indicative quotes, integer hedge tickets and remaining scenario risk](docs/options-desk/preview.jpg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)
+[![Stored synthetic Snapshot 1: worst scenario loss at 1x, 2x and 4x costs for the original fixed hedge tickets](docs/options-desk/options-cost-evidence.svg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/#risk-lab)
 
-*Actual application view. Hypothetical scenario losses are net of estimated costs; they are not historical performance or loss bounds.*
+*Calculated from stored synthetic Snapshot 1 at market volatility, using all 100 one-day scenarios and unchanged hedge quantities. A data graphic, not historical performance or a loss bound. [Source and calculation](options_lab/RISK_LAB.md#readme-evidence-graphic).*
 
 ## Fixed-ticket Risk Lab
 

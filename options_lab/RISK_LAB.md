@@ -88,3 +88,17 @@ shocked futures and option volatilities, unexpired contracts, all identities,
 and a complete, unique challenge set. The tests include future P&L checked by
 direct contract arithmetic and deliberate hash, identity, vector and shock
 corruptions. All outputs are synthetic research experiments.
+
+## README evidence graphic
+
+`docs/options-desk/options-cost-evidence.svg` is a numeric data graphic from the
+original `demo-data.json` (SHA-256
+`37b218d073690f565f5b8a6f858d2f726ad57efd847f4b2a36376a9d215a5b99`). It uses
+`snapshot_index=0`, `cso_shift=0`, `vanilla_shift_pp=0`, and
+`bundle_id=bundle-4409fb4f564ec2ec9b19`: the first displayed snapshot at market
+volatility. For each strategy and cost multiplier 1, 2 or 4, it computes
+`max(0, -min(gross_pnl - multiplier * recorded_ticket_cost))` over all 100 original
+one-day scenarios, with unchanged quantities. The no-hedge strategy has zero ticket cost.
+Values are rounded to whole USD. The graphic is not an application screenshot,
+forecast or record of real-market hedge performance. The original `preview.jpg`
+is retained unchanged as an archival interface capture.
