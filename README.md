@@ -1,18 +1,28 @@
-# WTI Options Desk & Cushing Inventory Research
+# WTI Options Desk & Cushing / WTI Research
 
-**Antony Zuo (Yuang Zuo) · Independent commodities research**
+**YZ · Cornell · Quantitative Research & Options Risk**
 
-Adjust volatility. Inspect the quote. Choose a proxy hedge. See what remains at risk.
+**What remains at risk after a proxy hedge?** A Python options desk connecting volatility inputs to indicative quotes, whole-contract hedge tickets and cost-inclusive scenario losses.
 
-[![Open interactive WTI Options Desk](docs/options-desk/open-demo.svg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)
+**45 stored cases · 100 stress scenarios · explicit trading costs**
 
-[Inventory research](https://yz3639-gif.github.io/cushing-wti-research/research/) · [Python engine](options_lab/README.md) · [Validation & limits](options_lab/VALIDATION.md) · [Demo case checks](docs/options-desk/verification.json)
+[**Open desk →**](https://yz3639-gif.github.io/cushing-wti-research/options-desk/) · [**Research →**](https://yz3639-gif.github.io/cushing-wti-research/research/) · [**Code →**](options_lab/README.md) · [Validation](options_lab/VALIDATION.md)
 
-No installation or sign-in. The public desk selects **45 precomputed Python-engine cases using synthetic inputs**; it does not use live market data or run an online optimizer.
+Synthetic engineering demonstration: the public desk uses precomputed Python-engine cases. It has no live market data or online optimizer. Historical Cushing research is linked separately below.
 
 [![WTI Options Desk showing volatility inputs, indicative quotes, integer hedge tickets and remaining scenario risk](docs/options-desk/preview.jpg)](https://yz3639-gif.github.io/cushing-wti-research/options-desk/)
 
-*Actual application view. Built by Antony Zuo. Hypothetical scenario losses are net of estimated costs; they are not historical performance or loss bounds.*
+*Actual application view. Hypothetical scenario losses are net of estimated costs; they are not historical performance or loss bounds.*
+
+## Fixed-ticket Risk Lab
+
+[Open the Risk Lab](https://yz3639-gif.github.io/cushing-wti-research/options-desk/#risk-lab) to inspect how the saved hedge responds to higher costs, omitted legs and a wider stress grid:
+
+- **1× / 2× / 4× costs:** compare fixed tickets and the cost at which the worst-loss advantage disappears.
+- **Remove a hedge leg:** inspect its contribution across all 100 original scenarios. This models not entering that leg; it is not a free close-out trade.
+- **12 extra challenges:** reprice the same ticket in predetermined synthetic stresses excluded from the optimization grid. Worsening results and limit breaches remain visible.
+
+[Calculation contract and reproduction](options_lab/RISK_LAB.md) · [Risk Lab evidence](docs/options-desk/risk-lab-data.json) · [Automated options checks](https://github.com/yz3639-gif/cushing-wti-research/actions/workflows/options-desk.yml)
 
 ## Try the desk in 30 seconds
 

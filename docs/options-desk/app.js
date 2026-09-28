@@ -9,7 +9,20 @@ const cleanId = value => String(value).replaceAll("FIXTURE_", "");
 const validStatuses = new Set(["optimal", "feasible_limit", "fallback_zero", "fallback_futures"]);
 const validHedge = hedge => !!hedge && validStatuses.has(hedge.status) && hedge.position_constraints?.compliant === true;
 const caseKey = (snapshot, cso, vanilla) => `${Number(snapshot)}:${Number(cso)}:${Number(vanilla)}`;
-let data, cases, snapshotIndex = 0, activeCase, draftCase;
+let data, cases, snapshotIndex = 0, activeCase, draftCase, riskLab;
+
+function disableRiskLab(error) {
+  riskLab = null;
+  $("risk-lab").innerHTML = '<h2>Risk Lab unavailable</h2><p class="muted" role="status"></p>';
+  $("risk-lab").querySelector("p").textContent = `${error.message} The original desk remains available above. No previous Risk Lab result has been substituted.`;
+}
+async function initializeRiskLab(bytes) {
+  try {
+    const {mountRiskLab} = await import("./risk-lab.mjs");
+    riskLab = await mountRiskLab($("risk-lab"), data, bytes);
+    riskLab.update(snapshot(), activeCase);
+  } catch (error) { disableRiskLab(error); }
+}
 
 function snapshot() { return data.snapshots.find(item => item.index === snapshotIndex); }
 function targetPrice(item) { return item.bundle.prices.find(price => price.contract_id === snapshot().settings.target_id); }
@@ -132,6 +145,10 @@ function renderActive() {
   $("workspace").dataset.bundleId = b.bundle_id;
   $("workspace").dataset.volVersionId = b.vol_version_id;
   $("workspace").dataset.snapshotId = b.snapshot_id;
+  if (riskLab) {
+    try { riskLab.update(snapshot(), activeCase); }
+    catch (error) { disableRiskLab(error); }
+  }
   renderDraft();
 }
 function selectSnapshot(index) {
@@ -155,7 +172,8 @@ async function initialize() {
   try {
     const response = await fetch("demo-data.json");
     if(!response.ok) throw new Error(`Could not load the scenario file (${response.status}).`);
-    data = await response.json();
+    const demoBytes = await response.arrayBuffer();
+    data = JSON.parse(new TextDecoder().decode(demoBytes));
     if(data.cases?.length !== 45 || data.snapshots?.length !== 3) throw new Error("Incomplete scenario dataset.");
     cases = new Map(data.cases.map(item=>[caseKey(item.snapshot_index,item.cso_shift,item.vanilla_shift_pp),item]));
     if(cases.size !== 45) throw new Error("Duplicate scenario keys.");
@@ -186,6 +204,7 @@ async function initialize() {
     selectSnapshot(data.snapshots[0].index);
     $("workspace").hidden = false;
     $("load-status").hidden = true;
+    initializeRiskLab(demoBytes);
   } catch(error) {
     $("load-status").textContent = `The desk could not load: ${error.message} Please reload the page.`;
     $("load-status").classList.add("error");
